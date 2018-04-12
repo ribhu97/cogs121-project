@@ -1,6 +1,9 @@
-#Project Proposal
-**Team Name**: Persistent 
+# Project Proposal
+
+**Team Name**: Persistent
+
 **Group Members**: Nikhil Bose, Alvin Vanegas, Ribhu Lahiri
+
 **Project ideas**
 1. A recommender system based on the Yelp API. Often when people are choosing where they want to eat next, they have a cuisine or type of food in mind, but not a specific option that satisfies their preferences. Moreoever, when they consult apps such as Yelp, they are flooded with too many options. Here we wanted to build a recommender system that takes into account personal preferences and favorites (through user input), and gives a recommendation based on a model trained on data taken from the yelp API. There will be a dynamic UI layer on top of the recommender system to take in User Input, show the system status and display the output once the model has finished running. A simplified flow would be like this:
 First time users display their favorite resteraunts (model 2 training data) --> User inputs type of food they want to eat -->
