@@ -7,6 +7,7 @@
 
 ## Prototypes
 ### Prototype 1
+
 #### Login
 ![Proto-1-Login](https://github.com/ribhu97/cogs121-project/blob/master/images/Signin-Proto-1.png)
 #### LinkedIn API
