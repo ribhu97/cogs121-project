@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ribhu97/cogs121-project#readme",
   "dependencies": {
+    "ejs": "^2.5.9",
     "express": "^4.16.3",
     "jshint": "^2.9.5",
     "mongodb": "^3.0.7",
