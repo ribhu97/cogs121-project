@@ -9,9 +9,10 @@ const fakeDatabase = {
 };
 
 
-app.get('/fakeDatabase/Model1', (req, res) => {
+app.get('/models', (req, res) => {
   const model = fakeDatabase['Model1'];
   console.log('Got data from fakeDatabase');
+  res.send(model);
 
 });
 
@@ -19,3 +20,4 @@ app.get('/fakeDatabase/Model1', (req, res) => {
 app.listen(3000, () => {
   console.log('Server started at http://localhost:3000/');
 });
+
