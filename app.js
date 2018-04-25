@@ -33,7 +33,9 @@ app.use(express.static(__dirname + '/views'));
 app.get('/', (req, res) => {
     res.sendFile('/view/index.html');
 });
-
+app.post('/', (req,res) => {
+    let stuff = res.body;
+})
 app.get('/recruiter', (req,res) => {
     Recruiter.find(function(err, recruiter) {
         if (err) return console.error(err);
