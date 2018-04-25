@@ -13,70 +13,31 @@
     <link href="main.css" rel="stylesheet">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="output.js"></script>
     </head>
   <body>
     <div class="container">
             <h1> TAL</h1>
-            <h4>Below are talented people that have met your criteria.</h4>
+            <h4>Your Model is:</h4>
             <!-- Beginning of cards -->
             <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                       <div class="card" style="width: 18rem;">
-                         <img class="card-img-top" src="..." alt="Card image cap">
-                         <div class="card-body">
-                           <h5 class="card-title">John Doe 1</h5>
-                           <p class="card-text">Short info about the student here.</p>
-                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                            View More Info
-                           </button>
-                         </div>
-                         <!-- Modal Pop Up -->
-                         <!-- Modal -->
-                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                             <div class="modal-content">
-                               <div class="modal-header">
-                                 <h5 class="modal-title" id="exampleModalLabel">John Doe 1</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                   <span aria-hidden="true">&times;</span>
-                                 </button>
-                               </div>
-                               <div class="modal-body">
-                                 More indepth information here...
-                               </div>
-                               <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                 <button type="button" class="btn btn-primary">Contact Match</button>
-                               </div>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="width: 18rem;">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">John Doe 2</h5>
-                            <p class="card-text">Short info about the student here.</p>
-                            <a href="#" class="btn btn-primary">View More Info</a>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card" style="width: 18rem;">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">John Doe 3</h5>
-                            <p class="card-text">Short info about the student here</p>
-                            <a href="#" class="btn btn-primary">View More Info</a>
-                          </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="row">
+                <button type="button" class="btn btn-primary">Show Model</button>  
+              </div>
+              <div class="row" id="result-1">
+                Result
+              </div>
+              <div class="row" id="result-2">
+                Result
+              </div>
+              <div class="row" id="result-3">
+                Result
+              </div>
+              
+
+
             </div>
-            <a href="index.html" class="btn btn-info" role="button">Do another search</a>
+            <a href="views/index.html" class="btn btn-info" role="button">Do another search</a>
     
     </div>
     <!-- Optional JavaScript -->
