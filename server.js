@@ -9,17 +9,11 @@ const fakeDatabase = {
 };
 
 
-<<<<<<< HEAD
-app.get('/output', (req, res) => {
-  const model = fakeDatabase['Model1'];
-  console.log('Got data from fakeDatabase');
-=======
 app.get('/models', (req, res) => {
   const model = fakeDatabase['Model1'];
   console.log('Got data from fakeDatabase');
   res.send(model);
 
->>>>>>> 309719123187be2aa6579c53a7bb6e95ddeeb431
 });
 
 // start the server at URL: http://localhost:3000/
