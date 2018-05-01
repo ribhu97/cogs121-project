@@ -12,7 +12,7 @@ const fakeDatabase = {
 app.get('/fakeDatabase/Model1', (req, res) => {
   const model = fakeDatabase['Model1'];
   console.log('Got data from fakeDatabase');
-
+  res.send(model);
 });
 
 // start the server at URL: http://localhost:3000/
