@@ -1,18 +1,35 @@
 $(document).ready(function(){
-  $('#show').click(function(){
-	console.log('JSing!');
-	var txt1 = "<div class = 'card'> <div class= 'content' Lorem ipsum dolor sit amet, consectetur adipiscing elitPhasellus nec iaculis mauris. <a>@bulmaio</a>.<a >#css</a> <a >#responsive</a><br></div></div></div>";               // Create element with HTML  
-    var txt2 = $("<p></p>").text("Text.");   // Create with jQuery
-    var txt3 = document.createElement("p");  // Create with DOM
-    $("body").append(txt1, txt2, txt3);      // Append the new elements 
+  $('#show').click( () => {
+		console.log('JSing!');
+		$.get('/api/view',function(data){
+				console.log('The Ajax in output works');
+				const result1 = data['students'][0];
+				const result2 = data['students'][4];
+				const result3 = data['students'][10];
+				a = getData(result1);
+				b = getData(result2);
+				c = getData(result3);
+				createCard(a[0],a[1],a[2],a[3]);	
+				createCard(b[0],b[1],b[2],b[3]);
+				createCard(c[0],c[1],c[2],c[3]);
+				});
+			});
+	 });
 
-	});
+	 function getData(result1) {
+		const fname1 = result1['fname'];
+		const lname1 = result1['lname'];
+		const u1 = result1["univ"];
+		const g1 = result1["gpa"];
+		return [fname1,lname1,u1,g1]
+	}
+
+	 function createCard (f,l,u,g) {
+		$("#candidates").append("<div class = 'card'><div class = 'card-header'>"+f+" "+l+"</div><div class = 'card-content'>"+"<strong>College: </strong>"+u+ "<br>" +"<strong>GPA: </strong>"+g+"</div><div>");
+	 }
 
 
-
-
-
-		//GET
+	 	//GET
 		// $.ajax({
     //   url: '/api/view',
     //   contentType: 'application/json',
@@ -25,13 +42,4 @@ $(document).ready(function(){
   	// 		$('#result-3').html(data.email);
     //   }
 		// });
-  	$.get('/api/view',function(data){
-  			console.log('Got from Server - Client Side!');
-  			// $('#result-1').html(data.attribute1);
-  			// $('#result-2').html(data.attribute2);
-  			// $('#result-3').html(data.attribute3);
-  		});
 	
-	 });
-
-});

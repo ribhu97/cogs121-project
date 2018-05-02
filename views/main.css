@@ -17,3 +17,13 @@
 #add-model {
     display: block;
 }
+
+.card{
+    border-radius:10px;
+    margin:10px;
+}
+
+.card-header {
+    padding:10px;
+    
+}
