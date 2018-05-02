@@ -7,29 +7,74 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Bulma Style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <!-- CSS Style -->
-    <link href="main.css" rel="stylesheet">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet">
+    <script type='text/javascript' src = "main.js"></script>
     </head>
   <body>
     <div class="container">
-        <h1> Persistent</h1>
-        <h3>Get Hired</h3>
-        <h4>Find the right people.</h4>
-        <div class="form-group">
-            <label for="usr">Company:</label>
-            <input type="text" class="form-control" id="usr">
-          </div>
-          <div class="form-group">
-            <label for="pwd">Title:</label>
-            <input type="password" class="form-control" id="pwd">
-          </div>
-          <a href="views/output.html" class="btn btn-info" role="button">Submit</a>
+      <h1 class="title is-1">Tal</h1>
+      <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>
+         
+      <div class = "column">
+      <div class="select is-rounded">
+              <select id="FormControlSelect1">
+                   <option>Choose Feature <option>
+                    <option>Major<option>
+                    <option>GPA</option>
+                    <option>number of internships</option>
+                    <option>number of languages known</option>
+                    <option>Quality of internships</option>
+              </select>
+            </div>
 
-    </div>   
+            <div class="select is-rounded">
+                <select id="FormControlSelect2">
+                     <option>Choose Feature <option>
+                      <option>Major<option>
+                      <option>GPA</option>
+                      <option>number of internships</option>
+                      <option>number of languages known</option>
+                      <option>Quality of internships</option>
+                </select>
+              </div>
+
+              <div class="select is-rounded">
+                  <select id="FormControlSelect3">
+                       <option>Choose Feature<option>
+                        <option>Major<option>
+                        <option>GPA</option>
+                        <option>number of internships</option>
+                        <option>number of languages known</option>
+                        <option>Quality of internships</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="field">
+                  <div class="file is-large is-boxed has-name">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Large file…
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        Screen Shot 2017-07-29 at 15.54.25.png
+                      </span>
+                    </label>
+                  </div>
+    
+    
+    
+            </div>   
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

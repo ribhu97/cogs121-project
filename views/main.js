@@ -23,3 +23,11 @@ $( document ).ready(function() {
 
 
 });
+
+
+if (ability == abilityBeginner){
+    if(countBeg == 0){  
+        MatchCounter++;
+        int begID = MatchCounter + 1;
+    }   
+}

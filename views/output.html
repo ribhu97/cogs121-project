@@ -14,36 +14,31 @@
     <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script type="text/javascript" src="output.js"></script>
     </head>
   <body>
     <div class="container">
-            <h1> TAL</h1>
-            <h4>Your Model is:</h4>
+      <h1 class="title is-1">Tal</h1>
+      <hr>
             <!-- Beginning of cards -->
             <div class="container">
-              <div class="row">
-                <button type="button" class="btn btn-primary" id = "ModelButton">Show Model</button>  
+              <div class="level">
+                <a class="button is-primary is-rounded" id = "show">Show the Results</a>
               </div>
-              <div class="row" id="result-1">
-               
-              </div>
-              <div class="row" id="result-2">
-                
-              </div>
-              <div class="row" id="result-3">
               <br>
-              </div>
-              
+              <h4>Model 1</h4>
+              <div id="result-1"></div>
+              <div id="result-2"></div>
+              <div id="result-3"></div>
+              <p>Based on the parameters you have chosen, these are the top candidates:</p>
+              <div class="level" id = "candidates"></div>
+            <a href="index.html" class="button is-info is-rounded">Do another search</a>
 
+          </div>
 
-            </div>
-            <a href="views/index.html" class="btn btn-info" role="button">Do another search</a>
-    
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    
   </body>
 </html>
