@@ -10,17 +10,18 @@
     <!-- Bulma Style-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <!-- CSS Style -->
+    <link href="main.css" rel="stylesheet">
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet">
     <script type='text/javascript' src = "main.js"></script>
     </head>
   <body>
     <div class="container">
       <h1 class="title is-1">Tal</h1>
-      <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>
          
       <div class = "column">
-      <div class="select is-rounded">
+        <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>
+
+        <div class="select is-rounded">
               <select id="FormControlSelect1">
                    <option>Choose Feature <option>
                     <option>Major<option>
@@ -52,7 +53,6 @@
                         <option>Quality of internships</option>
                   </select>
                 </div>
-              </div>
               
               <div class="field">
                   <div class="file is-large is-boxed has-name">
@@ -63,18 +63,41 @@
                           <i class="fas fa-upload"></i>
                         </span>
                         <span class="file-label">
-                          Large file…
+                          Enter a .csv or .json file
                         </span>
                       </span>
                       <span class="file-name">
-                        Screen Shot 2017-07-29 at 15.54.25.png
+                        List of Current Interns
                       </span>
                     </label>
                   </div>
-    
-                  <a href="output.html" class="button is-primary is-rounded">Submit</a>
+            </div>  
 
-            </div>   
+            <div class="field">
+              <div class="file is-large is-boxed has-name">
+                <label class="file-label">
+                  <input class="file-input" type="file" name="resume">
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                      Enter a .csv or .json file
+                    </span>
+                  </span>
+                  <span class="file-name">
+                    Candidates List
+                  </span>
+                </label>
+              </div>
+        </div>  
+
+
+
+            <a href="output.html" class="button is-primary is-rounded">Submit</a>
+          
+          </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
