@@ -1,12 +1,12 @@
 # Milestone 4 
 
-[!login](https://github.com/ribhu97/cogs121-project/blob/master/images/Login-Native.png)
+![login](https://github.com/ribhu97/cogs121-project/blob/master/images/Login-Native.png)
 
-[!profile](https://github.com/ribhu97/cogs121-project/blob/master/images/profile-native.png)
+![profile](https://github.com/ribhu97/cogs121-project/blob/master/images/profile-native.png)
 
-[!input](https://github.com/ribhu97/cogs121-project/blob/master/images/Screenshot%202018-05-02%2012.22.40.png)
+![input](https://github.com/ribhu97/cogs121-project/blob/master/images/Screenshot%202018-05-02%2012.22.40.png)
 
-[!output](https://github.com/ribhu97/cogs121-project/blob/master/images/output-cards.png)
+![output](https://github.com/ribhu97/cogs121-project/blob/master/images/output-cards.png)
 
 
 Since our application is dealing with tons of sensitive data, and performing some (albeit light) learning on the data, it is paramount to be transparent and secure with user data.
