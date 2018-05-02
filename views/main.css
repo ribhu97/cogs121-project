@@ -1,0 +1,19 @@
+#user-info {
+    display: block;
+    float: right;
+}
+#page-title {
+    display: inline-block;
+}
+
+#welcome-text {
+    text-align: center;
+}
+
+#my-models {
+    text-align: center;
+}
+
+#add-model {
+    display: block;
+}

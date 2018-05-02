@@ -7,25 +7,31 @@ $(document).ready(function(){
     $("body").append(txt1, txt2, txt3);      // Append the new elements 
 
 	});
-	
 
 
 
 
 
-
-
-  
-	/*
-  	$.get('http://localhost:3000/models',function(data){
+		//GET
+		// $.ajax({
+    //   url: '/api/view',
+    //   contentType: 'application/json',
+    //   success: function(response) {
+		// 		var data = response.students;
+		// 		console.log(data);
+		// 		// Loop and append
+		// 		$('#result-1').html(data.fname);
+  	// 		$('#result-2').html(data.lname);
+  	// 		$('#result-3').html(data.email);
+    //   }
+		// });
+  	$.get('/api/view',function(data){
   			console.log('Got from Server - Client Side!');
-  			$('#result-1').html("Feature 1 is: " + data.attribute1);
-  			$('#result-2').html("Feature 2 is: " + data.attribute2);
-			  $('#result-3').html("Feature 3 is: " + data.attribute3);
-			  
-			
+  			// $('#result-1').html(data.attribute1);
+  			// $('#result-2').html(data.attribute2);
+  			// $('#result-3').html(data.attribute3);
   		});
 	
-	*/ 
+	 });
 
 });
