@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src = "main.js"></script>
 
     <title>Tal, the right candidate finder</title>
     <!-- Required meta tags -->
@@ -12,7 +11,8 @@
     <!-- CSS Style -->
     <link href="main.css" rel="stylesheet">
     <!-- Font -->
-    <script type='text/javascript' src = "main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type='text/javascript' src = "input.js"></script>
     </head>
   <body>
     <div class="container">
@@ -54,10 +54,13 @@
                   </select>
                 </div>
               
+               
+
+
               <div class="field">
                   <div class="file is-large is-boxed has-name">
                     <label class="file-label">
-                      <input class="file-input" type="file" name="resume">
+                      <input accept=".csv,.json" class="file-input" type="file" id = "Training" name="Training">
                       <span class="file-cta">
                         <span class="file-icon">
                           <i class="fas fa-upload"></i>
@@ -67,16 +70,17 @@
                         </span>
                       </span>
                       <span class="file-name">
-                        List of Current Interns
+                        Current-Interns
                       </span>
                     </label>
                   </div>
             </div>  
+            <div id = "Training-upload"></div>          
 
             <div class="field">
               <div class="file is-large is-boxed has-name">
                 <label class="file-label">
-                  <input class="file-input" type="file" name="resume">
+                  <input class="file-input" type="file" accept=".csv,.json" id = "Test" name="Test">
                   <span class="file-cta">
                     <span class="file-icon">
                       <i class="fas fa-upload"></i>
@@ -86,16 +90,14 @@
                     </span>
                   </span>
                   <span class="file-name">
-                    Candidates List
+                    Candidates-List
                   </span>
                 </label>
               </div>
         </div>  
+        <div id = "Test-upload"></div>          
 
-
-
-            <a href="output.html" class="button is-primary is-rounded">Submit</a>
-          
+        <a class="button is-primary is-rounded" type = "submit" id = "inSub">Submit</a>
           </div>
 
 
