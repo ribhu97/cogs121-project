@@ -14,10 +14,6 @@
     text-align: center;
 }
 
-#add-model {
-    display: block;
-}
-
 .card{
     border-radius:10px;
     margin:5px;
@@ -36,4 +32,15 @@
 
 .is-rounded {
     margin-right:25px;
+}
+
+#avatar {
+    border-radius: 50%;
+    width: 7%;
+    height: 7%;
+    float: right;
+}
+
+#compName {
+    float: right;
 }

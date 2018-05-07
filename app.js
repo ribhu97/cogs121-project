@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+
 //add database connection
 mongoose.connect(config.db);
 const db = mongoose.connection;
@@ -35,6 +36,8 @@ app.get('/api/view', Student.find);
 
 
 app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/images'));
+
 app.get('/', (req, res) => {
     res.sendFile('/view/index.html');
 });
