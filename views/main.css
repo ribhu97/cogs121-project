@@ -44,3 +44,18 @@
 #compName {
     float: right;
 }
+#login-forms {
+    text-align: center;
+}
+.card.is-wide {
+    width: 550px;
+    display: inline-block;
+}
+
+#login-btn, #register-btn {
+    width: 50%;
+}
+
+.card-header {
+    padding: 0px;
+}
