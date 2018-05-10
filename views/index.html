@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script type='text/javascript' src = "main.js"></script>
+    <script type='text/javascript' src = "index.js"></script>
     </head>
   <body>
     <div class="section">
@@ -32,6 +32,18 @@
                   <a class="button" id="register-btn">Register</a>
                 </header>
                 <div class="card-content">
+
+                  <!-- Name Input -->
+                  <div class="field" id="name-input">
+                    <p class="control has-icons-left has-icons-right">
+                      <input class="input" type="text" placeholder="Name">
+                      <span class="icon is-small is-left">
+                          <i class="fas fa-user"></i>
+                        </span>
+                    </p>
+                  </div>
+
+                  <!-- Email Input -->
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
                       <input class="input" type="email" placeholder="Email">
@@ -43,6 +55,8 @@
                       </span>
                     </p>
                   </div>
+
+                  <!-- Password Input -->
                   <div class="field">
                     <p class="control has-icons-left">
                       <input class="input" type="password" placeholder="Password">
@@ -51,6 +65,16 @@
                       </span>
                     </p>
                   </div>
+
+                  <!-- Company Input -->
+                  <div class="field" id="comp-input">
+                      <p class="control has-icons-left has-icons-right">
+                        <input class="input" type="text" placeholder="Company">
+                        <span class="icon is-small is-left">
+                            <i class="far fa-building"></i>
+                          </span>
+                      </p>
+                    </div>
                   <div class="field">
                     <p class="control">
                       <button class="button is-success">

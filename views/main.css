@@ -59,3 +59,15 @@
 .card-header {
     padding: 0px;
 }
+
+button.is-success {
+    width: 100%;
+}
+
+#comp-input {
+    display: none;
+}
+
+#name-input {
+    display: none;
+}
