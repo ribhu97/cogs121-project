@@ -1,6 +1,9 @@
 const arr = [];
 
+
 $(document).ready(function() {    
+    let id = this.id;
+
 
     $( "#Training" ).change( () => {
         const fURL  = upload("Training");
@@ -55,7 +58,6 @@ function  dragOver(ev) {
     ev.preventDefault();
 }
 
-
 function drop(ev) {
     console.log("Drop");
     ev.preventDefault();
@@ -67,7 +69,7 @@ function drop(ev) {
     // Clear the drag data cache (for all formats/types)
     ev.dataTransfer.clearData();
 }
-
+/*
 function uploadAttributes(arr) {
     $.ajax({
         url: 'asldfjalksjdfl;aks/recruiterID',
@@ -80,3 +82,4 @@ function uploadAttributes(arr) {
         }
     });
 }
+*/
