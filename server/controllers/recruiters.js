@@ -1,8 +1,9 @@
 (function() {
     'use strict';
   
-    var mongoose = require('mongoose'),
-    Recruiter = require('../models/recruiters');
+    const mongoose = require('mongoose');
+    const Recruiter = require('../models/recruiters');
+    const csv = require('fast-csv');
   
     // Export the methods
     module.exports = {

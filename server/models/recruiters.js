@@ -15,7 +15,7 @@
       },
       company: String,
       password: String,
-      attributes: [String]
+      attr: [String]
     });
   
     //Export the model

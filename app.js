@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const fileUpload = require('express-fileupload');
 
 //CONFIG
 // Require the config file
@@ -27,13 +28,16 @@ Recruiter = require('./server/controllers/recruiters');
 //ROUTES
 let index = require('./routes/index');
 
+app.use(fileUpload());
+
 app.get('/api/student/view', Student.find);
-app.get('/api/student/train', Student.import);
+app.post('/api/student/add', Student.create);
 app.get('/api/recruiter/view', Recruiter.find);
 app.post('/api/recruiter/add', Recruiter.create);
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/images'));
+
 
 app.get('/', (req, res) => {
     res.sendFile('/view/index.html');
