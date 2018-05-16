@@ -2,10 +2,10 @@
 
 UI Screens
 
-![login](https://github.com/ribhu97/cogs121-project/blob/master/images/Login-screen.png)
+![login](https://github.com/ribhu97/cogs121-project/blob/alvin/images/Login-screen.png)
 
 
-![input](https://github.com/ribhu97/cogs121-project/blob/master/images/input-page.png)
+![input](https://github.com/ribhu97/cogs121-project/blob/alvin/images/input-page.png)
 
 
 
