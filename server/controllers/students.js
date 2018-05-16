@@ -33,6 +33,16 @@
             });
           }
         });
+      },
+
+      import: function(req,res) {
+        //To import test and training data
+        let exec = require('child_process').exec
+        let command = 'mongoimport -d persistent -c students --file ./newdata_train.json'
+        exec(command, (err, stdout, stderr) => {
+          // check for errors or if it was succesfuly
+          console.log(err.message);
+        })
       }
     };
   })();

@@ -1,0 +1,11 @@
+{"fname": "John",
+ "lname": "Appleseed",
+ "email": "japple@apple.com",
+ "univ": "University of Washington",
+ "num_intern":1,
+ "hired":1,
+ "github_score":69.9,
+ "resume_score":74.1,
+ "online_code_score":59.2,
+ "gpa":3.12345123453452
+}

@@ -26,14 +26,10 @@ Student = require('./server/controllers/students');
 //ROUTES
 let index = require('./routes/index');
 
-app.get('/api/view', Student.find);
-//MODEL - TO BE ADDED TO SEPARATE FILE
-// const recSchema = mongoose.Schema({
-//     modelChoices: {type : [String]}
-// }, {collection:'recruiter'});
-
-// const Recruiter = mongoose.model('recruiter', recSchema);//the actual model
-
+app.get('/api/student/view', Student.find);
+app.get('/api/student/train', Student.import);
+app.get('/api/recruiter/view', Recruiter.find);
+app.get('/api/recruiter/add', Recruiter.create);
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/images'));
@@ -47,7 +43,4 @@ app.get('/output', (req, res) => {
 app.post('/', (req,res) => {
     let stuff = res.body;
 })
-app.get('/recruiter', (req,res) => {
-
-});
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
