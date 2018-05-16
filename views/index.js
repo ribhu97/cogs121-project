@@ -62,7 +62,6 @@ $( document ).ready(function() {
             });
 
 
-
             window.location.href='input.html';
         }
         else {
