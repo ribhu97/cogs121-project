@@ -27,16 +27,16 @@
               <h2 class="subtitle">Find the right people.</h2>  
 
               <div class="card has-text-centered is-wide">
-                <header class="card-header">
+                <!-- <header class="card-header">
                   <a class="button" id="login-btn">Login</a>
                   <a class="button" id="register-btn">Register</a>
-                </header>
+                </header> -->
                 <div class="card-content">
 
                   <!-- Name Input -->
                   <div class="field" id="name-input">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="text" placeholder="Name">
+                      <input class="input" type="text" placeholder="Name" id="name">
                       <span class="icon is-small is-left">
                           <i class="fas fa-user"></i>
                         </span>
@@ -46,7 +46,7 @@
                   <!-- Email Input -->
                   <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                      <input class="input" type="email" placeholder="Email">
+                      <input class="input" type="email" placeholder="Email" id="email">
                       <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                       </span>
@@ -59,7 +59,7 @@
                   <!-- Password Input -->
                   <div class="field">
                     <p class="control has-icons-left">
-                      <input class="input" type="password" placeholder="Password">
+                      <input class="input" type="password" placeholder="Password" id="password">
                       <span class="icon is-small is-left">
                         <i class="fas fa-lock"></i>
                       </span>
@@ -69,20 +69,24 @@
                   <!-- Company Input -->
                   <div class="field" id="comp-input">
                       <p class="control has-icons-left has-icons-right">
-                        <input class="input" type="text" placeholder="Company">
+                        <input class="input" type="text" placeholder="Company" id="company">
                         <span class="icon is-small is-left">
                             <i class="far fa-building"></i>
-                          </span>
+                        </span>
                       </p>
                     </div>
                   <div class="field">
                     <p class="control">
-                      <button class="button is-success">
-                        <a href="profile.html">Login</a>  
+                      <button class="button is-success" id="submit-btn">
+                        Login
                       </button>
                     </p>
                   </div>
                 </div>
+              </div>
+              <div class="container" id="btn-container">
+                  <a class="button" id="login-btn">Login</a>
+                  <a class="button" id="register-btn">Register</a>
               </div>
             </div>
         </div> 

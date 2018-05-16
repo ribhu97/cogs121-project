@@ -20,8 +20,7 @@
 }
 
 .card-header {
-    padding:10px;
-    
+    padding:10px; 
 }
 
 .field {
@@ -71,3 +70,18 @@ button.is-success {
 #name-input {
     display: none;
 }
+
+#login-btn {
+    background-color: #3884ff;
+    color: white;
+    float: left;
+}
+
+#btn-container {
+    width: 88%;
+}
+
+button.is-success {
+    color: white;
+}
+
