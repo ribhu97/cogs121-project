@@ -20,7 +20,8 @@
           if (err) {
             console.log(err);
             return res.status(500).send(err);
-          } else {
+          } 
+          else {
             return res.status(200).json({
               message: 'Successfully added new recruiter'
             });
@@ -31,6 +32,19 @@
       // Function to edit/update
       edit: function(req, res) {
         // Assignment. Learn how to do this
+        let id = req.body.id;
+        let attributes = req.body.attr;
+        Recruiter.findByIdAndUpdate( id , {attr:attributes} ,function(err, Recruiter) {
+          if (err) {
+            console.log(err);
+            return res.status(500).send(err);
+          } 
+          else {
+            return res.status(200).json({
+              message: 'Successfully added attributes'
+            });
+          }
+        });
       },
   
       delete: function(req, res) {
@@ -38,14 +52,14 @@
       },
       
       find: function(req, res) {
-        Recruiter.find(function(err, recruiters) {
+        Recruiter.find(function(err, recruiter) {
           if (err) {
             return res.status(500).json({
               err: err || err.errmessage
             });
           } else {
             return res.status(200).json({
-              recruiters: recruiters
+              recruiters: recruiter
             });
           }
         });

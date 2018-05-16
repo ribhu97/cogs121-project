@@ -27,7 +27,6 @@
         .on("end", function(){
           Student.create(students, function(err, documents) {
            if (err) throw err;
-           
            res.send(students.length + ' students have been successfully uploaded.');
           });
         });
