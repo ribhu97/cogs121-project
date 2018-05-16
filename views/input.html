@@ -17,46 +17,52 @@
   <body>
     <div class="container">
       <h1 class="title is-1">Tal</h1>
-         
-      <div class = "column">
-        <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>
 
-        <div class="select is-rounded">
-              <select id="FormControlSelect1">
-                   <option>Choose Feature <option>
-                    <option>Major<option>
-                    <option>GPA</option>
-                    <option>number of internships</option>
-                    <option>number of languages known</option>
-                    <option>Quality of internships</option>
-              </select>
+      <div class = "columns">        
+       
+        <div id = "divider" >
+        <div class = "column">
+            <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>  
+            <div class = "level">
+              <div class = "level-left">
+              <a id = "University" draggable ="true" ondragstart = "dragStart(event);" class="button is-primary is-rounded">University</a>
+              <a id = "Major" draggable ="true" ondragstart = "dragStart(event);"  class="button is-primary is-rounded">Major</a>
+              <a id = "GPA" draggable ="true"  ondragstart = "dragStart(event);" class="button is-primary is-rounded">GPA</a>
+              </div>
+            </div>
+            <div class = "level">
+                <div class = "level-left">
+              <a id = "Internship-Quality" draggable ="true" ondragstart = "dragStart(event);"  class="button is-danger is-rounded">Quality of Internships</a>
+              <a id = "Num-Internship" draggable ="true" ondragstart = "dragStart(event);" class="button is-danger is-rounded">Number of Internships</a>
+                </div>
+            </div>    
+            <div class = "level">
+                <div class = "level-left">
+                <a id = "Num-PL" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Number of PL known</a>
+                <a  id = "Machine-Learning" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Machine learning</a>
+                </div>  
+            </div> 
+            <div class = "level">
+                <div class = "level-left">
+                  <a id = "Github-Score" draggable ="true" ondragstart = "dragStart(event);"  class="button is-success is-rounded">Github Score</a>
+                  <a id = "Online-Coding-Score" draggable ="true" ondragstart = "dragStart(event);" class="button is-success is-rounded">Online Coding Score</a>
+                </div>  
             </div>
 
-            <div class="select is-rounded">
-                <select id="FormControlSelect2">
-                     <option>Choose Feature <option>
-                      <option>Major<option>
-                      <option>GPA</option>
-                      <option>number of internships</option>
-                      <option>number of languages known</option>
-                      <option>Quality of internships</option>
-                </select>
-              </div>
-
-              <div class="select is-rounded">
-                  <select id="FormControlSelect3">
-                       <option>Choose Feature<option>
-                        <option>Major<option>
-                        <option>GPA</option>
-                        <option>number of internships</option>
-                        <option>number of languages known</option>
-                        <option>Quality of internships</option>
-                  </select>
+            <div class = "level">
+              <div style = "height:500px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
+                <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
+                <div class = "level-left">
                 </div>
-              
-               
+              </div>
+            </div>
 
+          </div>  
+       </div>
 
+        <div class = "column">
+          <div id = "upload-container" class = "level">
+            <div class = "level-item">
               <div class="field">
                   <div class="file is-large is-boxed has-name">
                     <label class="file-label">
@@ -66,7 +72,7 @@
                           <i class="fas fa-upload"></i>
                         </span>
                         <span class="file-label">
-                          Enter a .csv or .json file
+                          Please upload a .csv file
                         </span>
                       </span>
                       <span class="file-name">
@@ -74,9 +80,17 @@
                       </span>
                     </label>
                   </div>
-            </div>  
-            <div id = "Training-upload"></div>          
-
+             </div>  
+            </div>
+          </div>
+          <div class = "level">
+              <div class = "level-item">
+            <div class = "uploads" id = "Training-upload"></div>  
+              </div>
+              </div>
+            
+          <div class = "level">
+            <div class = "level-item">  
             <div class="field">
               <div class="file is-large is-boxed has-name">
                 <label class="file-label">
@@ -86,7 +100,7 @@
                       <i class="fas fa-upload"></i>
                     </span>
                     <span class="file-label">
-                      Enter a .csv or .json file
+                      Please upload a .csv file
                     </span>
                   </span>
                   <span class="file-name">
@@ -94,17 +108,23 @@
                   </span>
                 </label>
               </div>
-        </div>  
-        <div id = "Test-upload"></div>          
-
-        <a class="button is-primary is-rounded" type = "submit" id = "inSub">Submit</a>
+              </div>  
+          </div>
           </div>
 
+          <div class = "level">
+            <div class = "level-item">  
+          <div class = "uploads" id = "Test-upload"></div>
+          </div>          
+        </div>
+        <div class = "level">
+            <div class = "level-item">
+              <a class="button is-primary is-rounded" type = "submit" id = "inSub">Submit</a>
+            </div>
+          </div>
+      </div>
+      </div>
+      
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 </html>

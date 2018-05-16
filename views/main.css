@@ -28,12 +28,34 @@
     
 }
 
-.field {
-    margin-top:20px;
-    margin-bottom:30px; 
+.file-label {
+    border-radius: 5px;
 }
-
 
 .is-rounded {
     margin-right:25px;
+}
+
+.uploads {
+    margin-bottom:10px;
+}
+
+#upload-container{ 
+    margin:auto;
+}
+
+.level-item .level{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.button{
+    margin: 5px;
+}
+
+#divider{
+
+
 }
