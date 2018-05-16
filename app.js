@@ -23,13 +23,14 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(callback) {console.log("database connected")});
 
 Student = require('./server/controllers/students');
+Recruiter = require('./server/controllers/recruiters');
 //ROUTES
 let index = require('./routes/index');
 
 app.get('/api/student/view', Student.find);
 app.get('/api/student/train', Student.import);
 app.get('/api/recruiter/view', Recruiter.find);
-app.get('/api/recruiter/add', Recruiter.create);
+app.post('/api/recruiter/add', Recruiter.create);
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/images'));
