@@ -33,6 +33,28 @@
     margin-right:25px;
 }
 
+<<<<<<< Updated upstream
+=======
+.uploads {
+    margin-bottom:10px;
+}
+
+#upload-container{ 
+    margin:auto;
+}
+
+.level-item .level{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin:0px;
+    padding:0px;
+}
+
+.button{
+    margin: 5px;
+}
+
+>>>>>>> Stashed changes
 #avatar {
     border-radius: 50%;
     width: 7%;
@@ -52,7 +74,7 @@
 }
 
 #login-btn, #register-btn {
-    width: 50%;
+    width: 48%;
 }
 
 .card-header {
