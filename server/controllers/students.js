@@ -1,15 +1,37 @@
 (function() {
     'use strict';
   
-    var mongoose = require('mongoose'),
-    Student = require('../models/students');
+    const mongoose = require('mongoose');
+    const Student = require('../models/students');
+    const csv = require('fast-csv');
   
     // Export the methods
     module.exports = {
       // Function to create a new member
       create: function(req, res) {
         // Instance of the model Member
-        //TODO
+        if(!req.files)
+          return res.status(400).send('No files were uploaded.');
+
+        const studFile = req.files.file;
+        const students = [];
+
+        csv
+        .fromString(studFile.data.toString(), {
+          headers: true,
+          ignoreEmpty: true
+        })
+        .on("data", function(data){
+          students.push(data);
+        })
+        .on("end", function(){
+          Student.create(students, function(err, documents) {
+           if (err) throw err;
+           
+           res.send(students.length + ' students have been successfully uploaded.');
+          });
+        });
+        
       },
   
       // Function to edit/update
@@ -33,6 +55,7 @@
             });
           }
         });
-      }
+      },
+
     };
   })();
