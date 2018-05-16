@@ -34,6 +34,7 @@ app.get('/api/student/view', Student.find);
 app.post('/api/student/add', Student.create);
 app.get('/api/recruiter/view', Recruiter.find);
 app.post('/api/recruiter/add', Recruiter.create);
+app.put('/api/recruiter/put', Recruiter.edit);
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/images'));
