@@ -34,6 +34,10 @@ $( document ).ready(function() {
             let email = $( "#email" ).val();
             let password = $( "#password" ).val();
             let company = $( "#company" ).val();
+            if (userName==""|| email==""|| password=="" || company=="" ){
+                alert("Please Fill All Required Field");
+                return false;
+            }
             console.log(userName);
             console.log(email);
             console.log(password);
