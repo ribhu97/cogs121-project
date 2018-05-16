@@ -34,7 +34,8 @@
         // Assignment. Learn how to do this
         let id = req.body.id;
         let attributes = req.body.attr;
-        Recruiter.findByIdAndUpdate( id , {attr:attributes} ,function(err, Recruiter) {
+        console.log(attributes);
+        Recruiter.findByIdAndUpdate( id , {$set : {"attr":attributes}} ,function(err, Recruiter) {
           if (err) {
             console.log(err);
             return res.status(500).send(err);

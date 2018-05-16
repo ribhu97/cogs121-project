@@ -1,90 +1,79 @@
-const arr = [];
+$( document ).ready(function() {
+    let count = 0;
 
+    // 0 for login, 1 for register
+    $( "#login-btn" ).click(function() {
+        // console.log("Login button pressed");
+        $( "#name-input" ).hide();
+        $( "#comp-input" ).hide();
+        $( "#login-btn" ).css('background-color','#3884ff');
+        $("#register-btn").css('background-color','white');
+        $("#register-btn").css('color','black');
+        $( "#login-btn" ).css('color','white');
+        count = 0;
+        console.log(count);
+      });
+    $( "#register-btn" ).click(function() {
+        count = 1;
+        console.log(count);
+        // console.log("Register button pressed");
+        $( "#name-input" ).show();
+        $( "#comp-input" ).show();
+        $( "#register-btn" ).css('background-color','#3884ff');
+        $( "#register-btn" ).css('color','white');
+        $("#login-btn").css('background-color','white');
+        $("#login-btn").css('color','black');
 
-$(document).ready(function() {    
-    $( "#Training" ).change( () => {
-        const fURL  = upload("Training");
-        console.log(fURL);
     });
-    $( "#Test" ).change( () => {
-        const fURL  =  upload("Test");
-        console.log(fURL);
-    });
 
-    $("#inSub").click( () => {
-        console.log("Click works!");
-        console.log(arr);
-       //uploadAttributes(arr);
-    });
- 
-});
+    $( "#submit-btn" ).click(function() {
+        console.log("Submit button clicked");
+        if (count == 1) {
+            console.log("New user!");
+            let recName = $( "#name" ).val();
+            let recEmail = $( "#email" ).val();
+            let recPwd = $( "#password" ).val();
+            let recComp = $( "#company" ).val();
 
-function upload(id){
-    const x = document.getElementById(id);
-    let txt = "";
-    let fileURL = "";
-    if ('files' in x) {
-        if (x.files.length == 0) {
-            txt = "Please upload a file";
-        } 
-        else {
-                txt += "<br><strong>" + id + " Data has uploaded!</strong><br>";
-                var file = x.files[0];
-                if ('name' in file) {
-                    txt += file.name + "<br>";
+            if (recName==""|| recEmail==""|| recPwd=="" || recComp=="" ){
+                alert("Please Fill All Required Field");
+                return false;
+            }
+
+            console.log(recName);
+            console.log(recEmail);
+            console.log(recPwd);
+            console.log(recComp);
+
+
+            // Ajax call goes here
+            $.ajax({
+                method:'POST',
+                url: '/api/recruiter/add',
+                data: {
+                    name: recName,
+                    email: recEmail,
+                    password: recPwd,
+                    company: recComp
+                },
+                success: () => {
+                    console.log('data pushed');
                 }
-                 fileURL  = URL.createObjectURL(file);
-                 $.ajax({
-                    url: '/api/student/add',
-                    type: 'POST', 
-                    data: {
-                            training: file;
-                        },
-                    success : (data) => {
-                        console.log("File Upload is a sucess")
-                    }
-                });
+            });
+
+
+            window.location.href='input.html';
         }
-    } 
-    document.getElementById (id+"-upload").innerHTML = txt;     
-    return fileURL;
-}
-
-function dragStart(ev) {
-    console.log("dragStart");
-    // Change the source element's background color to signify drag has started
-    ev.currentTarget.style.border = "dashed";
-    ev.currentTarget.style.color = "grey";
-    // Set the drag's format and data. Use the event target's id for the data 
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-   
-function  dragOver(ev) {
-    console.log("dragOver");
-    ev.preventDefault();
-}
-
-function drop(ev) {
-    console.log("Drop");
-    ev.preventDefault();
-    // Get the data, which is the id of the drop target
-    var data = ev.dataTransfer.getData("text");
-    document.getElementById(data).style.margin = "10px;";
-    arr.push(data);
-    ev.target.appendChild(document.getElementById(data));
-    // Clear the drag data cache (for all formats/types)
-    ev.dataTransfer.clearData();
-}
-
-function uploadAttributes(arr) {
-    $.ajax({
-        url: '/api/student/edit',
-        type: 'PUT', 
-        data: {
-                attr: arr;
-            },
-        success : (data) => {
-            console.log("Attribute Put is a sucess")
+        else {
+            console.log("Logining in previous user!");
+            let email = $( "#email" ).val();
+            let password = $( "#password" ).val();
+            console.log(email);
+            console.log(password);
         }
     });
-}
+
+   
+
+
+});
