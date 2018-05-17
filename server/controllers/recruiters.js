@@ -33,6 +33,7 @@
       edit: function(req, res) {
         // Assignment. Learn how to do this
         let id = req.body.id;
+        console.log(req.body);
         let attributes = req.body.attr;
         console.log(attributes);
         Recruiter.findByIdAndUpdate( id , {$set : {"attr":attributes}} ,function(err, Recruiter) {
