@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const fileUpload = require('express-fileupload');
+const multer = require('multer');
 
 //CONFIG
 // Require the config file
@@ -29,11 +30,13 @@ Recruiter = require('./server/controllers/recruiters');
 let index = require('./routes/index');
 
 app.use(fileUpload());
+const upload = multer({dest:'uploads/'});
 
 app.get('/api/student/view', Student.find);
 app.post('/api/student/add', Student.create);
 app.get('/api/recruiter/view', Recruiter.find);
 app.post('/api/recruiter/add', Recruiter.create);
+app.put('/api/recruiter/edit', Recruiter.edit);
 
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/images'));

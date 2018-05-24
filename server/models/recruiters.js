@@ -1,10 +1,11 @@
 (function() {
     'use strict';
   
-    var mongoose = require('mongoose');
-    var Schema = mongoose.Schema;
+    const mongoose = require('mongoose');
+    const Model = require('./model')
+    const Schema = mongoose.Schema;
   
-    var RecruiterSchema = new Schema({
+    const RecruiterSchema = new Schema({
       name: {
         type: String,
         required: true
@@ -15,7 +16,7 @@
       },
       company: String,
       password: String,
-      attr: [String]
+      models: [Model]
     });
   
     //Export the model

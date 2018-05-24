@@ -13,11 +13,11 @@
         if(!req.files)
           return res.status(400).send('No files were uploaded.');
 
-        const studFile = req.files.file;
+        const studFile = req.files.Training;
+        const testFile = req.files.Test;
         const students = [];
 
-        csv
-        .fromString(studFile.data.toString(), {
+        csv.fromString(studFile.data.toString(), {
           headers: true,
           ignoreEmpty: true
         })
@@ -27,10 +27,23 @@
         .on("end", function(){
           Student.create(students, function(err, documents) {
            if (err) throw err;
-           
-           res.send(students.length + ' students have been successfully uploaded.');
           });
         });
+
+        csv.fromString(testFile.data.toString(), {
+          headers: true,
+          ignoreEmpty: true
+        })
+        .on("data", function(data){
+          students.push(data);
+        })
+        .on("end", function(){
+          Student.create(students, function(err, documents) {
+           if (err) throw err;
+           res.redirect('/output.html');
+          });
+        });
+
         
       },
   

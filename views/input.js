@@ -3,20 +3,18 @@ const arr = [];
 $(document).ready(function() {    
 
     $( "#Training" ).change( () => {
-        const fURL  = upload("Training");
-        console.log(fURL);
+        upload("Training");
+   
     });
     $( "#Test" ).change( () => {
-        const fURL  =  upload("Test");
-        console.log(fURL);
+        upload("Test");
+     
     });
-
+    
     $("#inSub").click( () => {
-        console.log("Click works!");
         console.log(arr);
-       //uploadAttributes(arr);
+       uploadAttributes(arr);
     });
-
     
 });
 
@@ -34,11 +32,10 @@ function upload(id){
                 if ('name' in file) {
                     txt += file.name + "<br>";
                 }
-                 fileURL  = URL.createObjectURL(file);
+               
         }
     } 
     document.getElementById (id+"-upload").innerHTML = txt;     
-    return fileURL;
 }
 
 function dragStart(ev) {
@@ -70,11 +67,10 @@ function drop(ev) {
 
 function uploadAttributes(arr) {
     $.ajax({
-        url: 'asldfjalksjdfl;aks/recruiterID',
-        type: 'POST', // <-- this is POST, not GET
-        data: {
-                attr: arr;
-            },
+        url: '/api/recruiter/edit',
+        type: 'PUT', // <-- this is POST, not GET
+        data: { attr : arr },
+        datatype: 'json',
         success : (data) => {
             console.log("Attribute Post is a sucess")
         }

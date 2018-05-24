@@ -31,11 +31,8 @@
         <!-- </div>           -->
         </section>
     <div class="container">
-      <h1 class="title is-1">Tal</h1>
-
       <div class = "columns">        
-       
-        <div id = "divider" >
+        
         <div class = "column">
             <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>  
             <div class = "level">
@@ -65,29 +62,34 @@
             </div>
 
             <div class = "level">
-              <div style = "height:500px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
+              <div style = "height:300px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
                 <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
                 <div class = "level-left">
                 </div>
               </div>
             </div>
-
           </div>  
-       </div>
 
         <div class = "column">
+        <form ref='uploadForm' 
+        id='uploadForm' 
+        action='/api/student/add  '
+        method='post' 
+        encType="multipart/form-data">
+
           <div id = "upload-container" class = "level">
             <div class = "level-item">
               <div class="field">
                   <div class="file is-large is-boxed has-name">
                     <label class="file-label">
-                      <input accept=".csv,.json" class="file-input" type="file" id = "Training" name="Training">
+                    
+                      <input accept=".csv,.json" class="file-input" type="file" id = "Training" name="Training"/>
                       <span class="file-cta">
                         <span class="file-icon">
                           <i class="fas fa-upload"></i>
                         </span>
                         <span class="file-label">
-                          Please upload a .csv file
+                          Upload a .csv file
                         </span>
                       </span>
                       <span class="file-name">
@@ -115,7 +117,7 @@
                       <i class="fas fa-upload"></i>
                     </span>
                     <span class="file-label">
-                      Please upload a .csv file
+                       Upload a .csv file
                     </span>
                   </span>
                   <span class="file-name">
@@ -132,14 +134,19 @@
           <div class = "uploads" id = "Test-upload"></div>
           </div>          
         </div>
+        
         <div class = "level">
-            <div class = "level-item">
-              <a class="button is-primary is-rounded" type = "submit" id = "inSub">Submit</a>
-            </div>
+          <div class = "level-item">
+            <input class="button is-primary is-rounded" type = "submit" id = "inSub" value='Submit'/>
           </div>
+         </div>
+       
+        </form>
+     
       </div>
       </div>
       
+    </div>
 
   </body>
 </html>

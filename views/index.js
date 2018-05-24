@@ -30,6 +30,7 @@ $( document ).ready(function() {
         console.log("Submit button clicked");
         if (count == 1) {
             console.log("New user!");
+<<<<<<< HEAD
             let userName = $( "#name" ).val();
             let email = $( "#email" ).val();
             let password = $( "#password" ).val();
@@ -42,6 +43,41 @@ $( document ).ready(function() {
             console.log(email);
             console.log(password);
             console.log(company);
+=======
+            let recName = $( "#name" ).val();
+            let recEmail = $( "#email" ).val();
+            let recPwd = $( "#password" ).val();
+            let recComp = $( "#company" ).val();
+
+            if (recName==""|| recEmail==""|| recPwd=="" || recComp=="" ){
+                alert("Please Fill All Required Field");
+                return false;
+            }
+
+            console.log(recName);
+            console.log(recEmail);
+            console.log(recPwd);
+            console.log(recComp);
+
+
+            // Ajax call goes here
+            $.ajax({
+                method:'POST',
+                url: '/api/recruiter/add',
+                data: {
+                    name: recName,
+                    email: recEmail,
+                    password: recPwd,
+                    company: recComp
+                },
+                success: () => {
+                    console.log('data pushed');
+                }
+            });
+
+
+            window.location.href='input.html';
+>>>>>>> e2781d72899b48e1da68ad5108431eaa0e9dd536
         }
         else {
             console.log("Logining in previous user!");
