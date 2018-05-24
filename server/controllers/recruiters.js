@@ -32,8 +32,9 @@
       // Function to edit/update
       edit: function(req, res) {
         // Assignment. Learn how to do this
-        let attributes = req.body['attr[]'];
-        let id = "5afb93e40db5cf0954e837f8";
+        let id = req.body.id;
+        console.log(req.body);
+        let attributes = req.body.attr;
         console.log(attributes);
         Recruiter.findByIdAndUpdate( id , {$set : {"attr":attributes}} ,function(err, Recruiter) {
           if (err) {

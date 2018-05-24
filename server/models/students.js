@@ -2,6 +2,7 @@
     'use strict';
   
     var mongoose = require('mongoose');
+    var Recruiter = require('./recruiters');
     var Schema = mongoose.Schema;
   
     var StudentSchema = new Schema({
@@ -19,11 +20,12 @@
       },
       univ: String,
       num_intern: Number,
-      hired: Number,
       github_score: Number,
       resume_score: Number,
       online_code_score: Number,
-      gpa: Number
+      gpa: Number,
+      recruiter: Recruiter,
+      hired: Number
     });
   
     //Export the model
