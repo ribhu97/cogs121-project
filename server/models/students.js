@@ -20,7 +20,6 @@
       },
       univ: String,
       num_intern: Number,
-      hired: Number,
       github_score: Number,
       resume_score: Number,
       online_code_score: Number,

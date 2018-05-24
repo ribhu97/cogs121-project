@@ -10,7 +10,7 @@ const multer = require('multer');
 //CONFIG
 // Require the config file
 const config = require('./config/config')
-//app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 //set up ejs for rendering

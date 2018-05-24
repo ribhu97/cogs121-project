@@ -40,7 +40,7 @@
         .on("end", function(){
           Student.create(students, function(err, documents) {
            if (err) throw err;
-           // res.redirect('/output.html');
+           res.redirect('/output.html');
           });
         });
 
