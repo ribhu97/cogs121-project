@@ -24,7 +24,10 @@
       resume_score: Number,
       online_code_score: Number,
       gpa: Number,
-      group: Group
+      group:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
+      }]
     });
   
     //Export the model

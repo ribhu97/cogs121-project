@@ -6,12 +6,15 @@
     const Student = require('./students');
     const Schema = mongoose.Schema;
   
-    const GroupSchema = new Schema({
+    var GroupSchema = new Schema({
       name: {
         type: String,
       },
       attr: [String],
-      recruiter: Recruiter,
+      recruiter: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Recruiter'
+      }],
       test: [Student],
       train: [Student]
     });
