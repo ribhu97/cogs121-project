@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src = "main.js"></script>
 
     <title>Tal, the right candidate finder</title>
     <!-- Required meta tags -->
@@ -14,7 +13,8 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <!-- Font -->
-    <script type='text/javascript' src = "main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type='text/javascript' src = "input.js"></script>
     </head>
   <body>
       <section class="section">
@@ -31,96 +31,124 @@
         <!-- </div>           -->
         </section>
     <div class="container">
-      <!-- <h1 class="title is-1">Tal</h1> -->
-      
-      <div class = "column">
-          <p class="subtitle">
-              Pick the attributes that you want to build your model on.
-          </p>  
-        <!-- <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5> -->
-
-        <div class="select is-rounded">
-              <select id="FormControlSelect1">
-                   <option>Choose Feature <option>
-                    <option>Major<option>
-                    <option>GPA</option>
-                    <option>number of internships</option>
-                    <option>number of languages known</option>
-                    <option>Quality of internships</option>
-              </select>
+      <div class = "columns">        
+        
+        <div class = "column">
+            <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>  
+            <div class = "level">
+              <div class = "level-left">
+              <a id = "University" draggable ="true" ondragstart = "dragStart(event);" class="button is-primary is-rounded">University</a>
+              <a id = "Major" draggable ="true" ondragstart = "dragStart(event);"  class="button is-primary is-rounded">Major</a>
+              <a id = "GPA" draggable ="true"  ondragstart = "dragStart(event);" class="button is-primary is-rounded">GPA</a>
+              </div>
+            </div>
+            <div class = "level">
+                <div class = "level-left">
+              <a id = "Internship-Quality" draggable ="true" ondragstart = "dragStart(event);"  class="button is-danger is-rounded">Quality of Internships</a>
+              <a id = "Num-Internship" draggable ="true" ondragstart = "dragStart(event);" class="button is-danger is-rounded">Number of Internships</a>
+                </div>
+            </div>    
+            <div class = "level">
+                <div class = "level-left">
+                <a id = "Num-PL" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Number of PL known</a>
+                <a  id = "Machine-Learning" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Machine learning</a>
+                </div>  
+            </div> 
+            <div class = "level">
+                <div class = "level-left">
+                  <a id = "Github-Score" draggable ="true" ondragstart = "dragStart(event);"  class="button is-success is-rounded">Github Score</a>
+                  <a id = "Online-Coding-Score" draggable ="true" ondragstart = "dragStart(event);" class="button is-success is-rounded">Online Coding Score</a>
+                </div>  
             </div>
 
-            <div class="select is-rounded">
-                <select id="FormControlSelect2">
-                     <option>Choose Feature <option>
-                      <option>Major<option>
-                      <option>GPA</option>
-                      <option>number of internships</option>
-                      <option>number of languages known</option>
-                      <option>Quality of internships</option>
-                </select>
-              </div>
-
-              <div class="select is-rounded">
-                  <select id="FormControlSelect3">
-                       <option>Choose Feature<option>
-                        <option>Major<option>
-                        <option>GPA</option>
-                        <option>number of internships</option>
-                        <option>number of languages known</option>
-                        <option>Quality of internships</option>
-                  </select>
+            <div class = "level">
+              <div style = "height:300px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
+                <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
+                <div class = "level-left">
                 </div>
-              
+              </div>
+            </div>
+          </div>  
+
+        <div class = "column">
+          
+
+        <!-- <form ref='uploadForm' 
+        id='uploadForm' 
+        action='/api/student/add'
+        method='post' 
+        encType="multipart/form-data">
+        -->    
+
+          <div id = "upload-container" class = "level">
+            <div class = "level-item">
               <div class="field">
                   <div class="file is-large is-boxed has-name">
                     <label class="file-label">
-                      <input class="file-input" type="file" name="resume">
+                    
+                      <input accept=".csv,.json" class="file-input" type="file" id = "Training" name="Training"/>
                       <span class="file-cta">
                         <span class="file-icon">
                           <i class="fas fa-upload"></i>
                         </span>
                         <span class="file-label">
-                          Enter a .csv or .json file
+                          Upload a .csv file
                         </span>
                       </span>
                       <span class="file-name">
-                        List of Current Interns
+                        Current-Interns
                       </span>
                     </label>
                   </div>
-            </div>  
-
+             </div>  
+            </div>
+          </div>
+          <div class = "level">
+              <div class = "level-item">
+            <div class = "uploads" id = "Training-upload"></div>  
+              </div>
+              </div>
+            
+          <div class = "level">
+            <div class = "level-item">  
             <div class="field">
               <div class="file is-large is-boxed has-name">
                 <label class="file-label">
-                  <input class="file-input" type="file" name="resume">
+                  <input class="file-input" type="file" accept=".csv,.json" id = "Test" name="Test">
                   <span class="file-cta">
                     <span class="file-icon">
                       <i class="fas fa-upload"></i>
                     </span>
                     <span class="file-label">
-                      Enter a .csv or .json file
+                       Upload a .csv file
                     </span>
                   </span>
                   <span class="file-name">
-                    Candidates List
+                    Candidates-List
                   </span>
                 </label>
               </div>
-        </div>  
-
-
-
-            <a href="output.html" class="button is-primary is-rounded">Submit</a>
-          
+              </div>  
+          </div>
           </div>
 
+          <div class = "level">
+            <div class = "level-item">  
+          <div class = "uploads" id = "Test-upload"></div>
+          </div>          
+        </div>
+        <div class = "level">
+          <div class = "level-item">
+            <input class="button is-primary is-rounded" type = "submit" value='Submit' id="inSub"/>
+          </div>
+         </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!--</form> -->
+     
+      </div>
+      </div>
+      
+    </div>
+
   </body>
 </html>

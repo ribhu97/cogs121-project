@@ -31,7 +31,21 @@
       // Function to edit/update
       edit: function(req, res) {
         // Assignment. Learn how to do this
-      },
+        let attributes = req.body['attr[]'];
+        let id = "5afb93e40db5cf0954e837f8";
+        console.log(attributes);
+        Recruiter.findByIdAndUpdate( id , {$set : {"attr":attributes}} ,function(err, Recruiter) {
+          if (err) {
+            console.log(err);
+            return res.status(500).send(err);
+          }
+          else {
+            return res.status(200).json({
+            message: 'Successfully added attributes'
+            });
+          }
+        });
+        },
   
       delete: function(req, res) {
         //TODO

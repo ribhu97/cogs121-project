@@ -14,7 +14,7 @@ $(document).ready(function() {
     $("#inSub").click( () => {
         console.log("Click works!");
         console.log(arr);
-       //uploadAttributes(arr);
+       uploadAttributes(arr);
     });
 
     
@@ -70,11 +70,10 @@ function drop(ev) {
 
 function uploadAttributes(arr) {
     $.ajax({
-        url: 'asldfjalksjdfl;aks/recruiterID',
-        type: 'POST', // <-- this is POST, not GET
-        data: {
-                attr: arr
-            },
+        url: '/api/recruiter/edit',
+        type: 'PUT', // <-- this is POST, not GET
+        data: { attr : arr },
+        datatype: 'json',
         success : (data) => {
             console.log("Attribute Post is a sucess")
         }
