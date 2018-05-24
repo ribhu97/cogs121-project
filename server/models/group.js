@@ -6,16 +6,19 @@
     const Student = require('./students');
     const Schema = mongoose.Schema;
   
-    const ModelSchema = new Schema({
+    var GroupSchema = new Schema({
       name: {
         type: String,
       },
       attr: [String],
-      recruiter: Recruiter,
+      recruiter: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Recruiter'
+      }],
       test: [Student],
       train: [Student]
     });
   
     //Export the model
-    module.exports = mongoose.model('Model', ModelSchema);
+    module.exports = mongoose.model('Group', GroupSchema);
   })();

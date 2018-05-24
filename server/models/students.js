@@ -2,7 +2,7 @@
     'use strict';
   
     var mongoose = require('mongoose');
-    var Recruiter = require('./recruiters');
+    const Group = require('./group');
     var Schema = mongoose.Schema;
   
     var StudentSchema = new Schema({
@@ -24,8 +24,10 @@
       resume_score: Number,
       online_code_score: Number,
       gpa: Number,
-      recruiter: Recruiter,
-      hired: Number
+      group:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
+      }]
     });
   
     //Export the model
