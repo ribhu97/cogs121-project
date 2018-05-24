@@ -2,6 +2,7 @@
     'use strict';
   
     var mongoose = require('mongoose');
+    const Group = require('./group');
     var Schema = mongoose.Schema;
   
     var StudentSchema = new Schema({
@@ -23,7 +24,8 @@
       github_score: Number,
       resume_score: Number,
       online_code_score: Number,
-      gpa: Number
+      gpa: Number,
+      group: Group
     });
   
     //Export the model
