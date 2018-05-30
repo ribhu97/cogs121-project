@@ -10,6 +10,7 @@ $( document ).ready(function() {
         $("#register-btn").css('background-color','white');
         $("#register-btn").css('color','black');
         $( "#login-btn" ).css('color','white');
+        $("#submit-btn").text('Login');
         count = 0;
         console.log(count);
       });
@@ -23,27 +24,13 @@ $( document ).ready(function() {
         $( "#register-btn" ).css('color','white');
         $("#login-btn").css('background-color','white');
         $("#login-btn").css('color','black');
-
+        $("#submit-btn").text('Register');
     });
 
     $( "#submit-btn" ).click(function() {
         console.log("Submit button clicked");
         if (count == 1) {
             console.log("New user!");
-<<<<<<< HEAD
-            let userName = $( "#name" ).val();
-            let email = $( "#email" ).val();
-            let password = $( "#password" ).val();
-            let company = $( "#company" ).val();
-            if (userName==""|| email==""|| password=="" || company=="" ){
-                alert("Please Fill All Required Field");
-                return false;
-            }
-            console.log(userName);
-            console.log(email);
-            console.log(password);
-            console.log(company);
-=======
             let recName = $( "#name" ).val();
             let recEmail = $( "#email" ).val();
             let recPwd = $( "#password" ).val();
@@ -54,11 +41,14 @@ $( document ).ready(function() {
                 return false;
             }
 
-            console.log(recName);
-            console.log(recEmail);
-            console.log(recPwd);
-            console.log(recComp);
+            // console.log(recName);
+            // console.log(recEmail);
+            // console.log(recPwd);
+            // console.log(recComp);
 
+            // Store company name and user name in local storage
+            localStorage.setItem('compName', recComp);
+            localStorage.setItem('name', recName);
 
             // Ajax call goes here
             $.ajax({
@@ -76,8 +66,7 @@ $( document ).ready(function() {
             });
 
 
-            window.location.href='input.html';
->>>>>>> e2781d72899b48e1da68ad5108431eaa0e9dd536
+            window.location.href='profile.html';
         }
         else {
             console.log("Logining in previous user!");

@@ -6,30 +6,61 @@
     <title>Tal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="profile.js"></script>
   </head>
   <body>
       <section class="section">
           <!-- <div class="container"> -->
             <div class="container">
-            <h1 class="title" id="page-title">
-              Tal
-            </h1>
+            <h1 class="title is-1" id="page-title">Tal</h1>
             <!-- <div id="user-info"> -->
-                <p id="compName">Company Name</p>
-                <img src="avatar.png" id="avatar">
+                <h5 class="title is-5" id="compName"></h5>
+                <div id="avatar-cont">
+                  <img src="avatar.jpg" id="avatar">
+                </div>
             <!--  </div> -->
           </div>
         <!-- </div>           -->
         </section>
-  <section id="my-models">
-        <a href = "input.html" class="button">
-            <!-- <div id="add-model"> -->
-                Add New Model
-            <!-- </div> -->
-            <br />
-            <i class="fas fa-plus"></i>
-        </a>
+      <section class="section" id="my-models">
+        <div class="container">
+          <h3 class="title is-3" id="welcome">Welcome </h3>
+          <div class="level">
+            <h4 class="title is-4" id="models-section">My Models</h4>
+          </div>
+          <div class="level">
+              <div class="level-item">
+                  <h6 class="title is-6">Sorry you have no groups created, click below to get started</h6>              
+              </div>
+          </div>
+          <div class="level" style="text-align: center">
+              <a class="button" style="margin:auto" onclick="toggleModal()">
+                  <!-- <div id="add-model"> -->
+                      Add New Group
+                  <!-- </div> -->
+                  <br />
+                  <i class="fas fa-plus"></i>
+              </a>
+          </div>
+          <div class="modal" id="create-group">
+              <div class="modal-background"></div>
+              <div class="modal-content" id="groupNameInput">
+                <!-- Any other Bulma elements you want -->
+                <div class="card">
+                  <!-- <div class="card-header-title">Name Group</div> -->
+                  <div class="card-content">
+                    <h5 class="title is-5">Enter new group name</h5>
+                    <div class="control">
+                          <input class="input" type="text" placeholder="ex. UCSD Class of 2018" id="groupName">
+                      </div>
+                  </div>
+                  <a class="button" onclick="submitGroup()">Submit</a>
+                </div>
+              </div>
+          </div>
+        </div>
   </section>
   </body>
 </html>

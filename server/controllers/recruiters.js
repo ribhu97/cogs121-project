@@ -16,7 +16,7 @@
         recruiter.company = req.body.company;
         recruiter.password = req.body.password;
         //Saving the model
-        Recruiter.save(function(err, savedRecruiter) {
+        recruiter.save(function(err, savedRecruiter) {
           if (err) {
             console.log(err);
             return res.status(500).send(err);

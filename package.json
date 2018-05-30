@@ -18,6 +18,8 @@
   "homepage": "https://github.com/ribhu97/cogs121-project#readme",
   "dependencies": {
     "bulma": "^0.7.1",
+    "c3": "^0.4.23",
+    "d3": "^5.4.0",
     "ejs": "^2.5.9",
     "express": "^4.16.3",
     "express-fileupload": "^0.4.0",

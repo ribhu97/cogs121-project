@@ -52,8 +52,6 @@
 
 #avatar {
     border-radius: 50%;
-    width: 7%;
-    height: 7%;
     float: right;
 }
 
@@ -69,7 +67,8 @@
 }
 
 #login-btn, #register-btn {
-    width: 50%;
+    display: inline-block;
+    width: 48%;
 }
 
 .card-header {
@@ -95,10 +94,71 @@ button.is-success {
 }
 
 #btn-container {
-    width: 88%;
+    width: 550px;
 }
 
 button.is-success {
     color: white;
 }
 
+.column {
+    border-top: 2px solid #dddddd;
+}
+
+#attr-col {
+    border-right: 2px solid #dddddd;
+}
+
+#chosen {
+    height: 200px;
+    width: 100%;
+}
+
+.file.is-boxed.has-name .file-cta {
+    width: 700px;
+    height: 120px;
+}
+
+.file.is-boxed.has-name .file-name {
+    width: 550px;
+}
+
+.subtitle.is-6 {
+    margin-bottom: 0px;
+}
+
+#upload-text {
+    margin-bottom: 0px;
+}
+
+#upload-container {
+    margin-bottom: 15px;
+}
+
+#inSub {
+    width: 100%;
+}
+
+#avatar-cont {
+    width: 66px;
+    height: 66px;
+    overflow: hidden;
+    float: right;
+
+}
+
+#models-section {
+    float: left;
+}
+
+#groupNameInput {
+    width: 400px;
+}
+
+.deleteButton {
+    display: none;
+}
+
+#school, #internships, #online-scores, #skills {
+    height: 50px;
+}

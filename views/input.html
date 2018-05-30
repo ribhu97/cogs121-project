@@ -20,69 +20,96 @@
       <section class="section">
           <!-- <div class="container"> -->
             <div class="container">
-            <h1 class="title" id="page-title">
-              Tal
-            </h1>
+            <h1 class="title is-1" id="page-title">Tal</h1>
             <!-- <div id="user-info"> -->
-                <p id="compName">Company Name</p>
-                <img src="avatar.png" id="avatar">
+                <h5 class="title is-5" id="compName"></h5>
+                <div id="avatar-cont">
+                  <img src="avatar.jpg" id="avatar">
+                </div>
             <!--  </div> -->
           </div>
         <!-- </div>           -->
         </section>
+        <div class="container" style="padding-bottom: 10px; text-align: center">
+            <!-- <h3 class="subtitle is-3" id="group-name"></h3>  -->
+            <h3 class="title is-3" id="group-name"></h3>     
+        </div>
+        
     <div class="container">
       <div class = "columns">        
-        
-        <div class = "column">
+        <div class = "column is-two-fifths" id="attr-col">
             <h5 class="subtitle is-5">Pick the attributes that you want to build your model on.</h5>  
+            <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #00d1b2"></i> School</h6>  
             <div class = "level">
-              <div class = "level-left">
-              <a id = "University" draggable ="true" ondragstart = "dragStart(event);" class="button is-primary is-rounded">University</a>
-              <a id = "Major" draggable ="true" ondragstart = "dragStart(event);"  class="button is-primary is-rounded">Major</a>
-              <a id = "GPA" draggable ="true"  ondragstart = "dragStart(event);" class="button is-primary is-rounded">GPA</a>
+              <div class = "level-left" id="school">
+                <!-- <div class="level-item"> -->
+                    <a id = "University" data-origin="school" draggable ="true" ondragstart = "dragStart(event);" class="button is-primary is-rounded" onclick="append(this)">University</a>
+                <!-- </div> -->
+                <!-- <div class="level-item"> -->
+                    <a id = "Major" data-origin="school" draggable ="true" ondragstart = "dragStart(event);"  class="button is-primary is-rounded" onclick="append(this)">Major</a>
+                <!-- </div> -->
+                <!-- <div class="level-item"> -->
+                    <a id = "GPA" data-origin="school" draggable ="true"  ondragstart = "dragStart(event);" class="button is-primary is-rounded" onclick="append(this)">GPA</a>
+                <!-- </div> -->
               </div>
             </div>
+            <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #ff3860"></i> Internships</h6>  
             <div class = "level">
-                <div class = "level-left">
-              <a id = "Internship-Quality" draggable ="true" ondragstart = "dragStart(event);"  class="button is-danger is-rounded">Quality of Internships</a>
-              <a id = "Num-Internship" draggable ="true" ondragstart = "dragStart(event);" class="button is-danger is-rounded">Number of Internships</a>
+                <div class = "level-left" id="internships">
+                  <!-- <div class="level-item"> -->
+                      <a id = "Internship-Quality" data-origin="internships" draggable ="true" ondragstart = "dragStart(event);"  class="button is-danger is-rounded" onclick="append(this)">Quality of Internships</a>
+                  <!-- </div> -->
+                  <!-- <div class="level-item"> -->
+                      <a id = "Num-Internship" data-origin="internships" draggable ="true" ondragstart = "dragStart(event);" class="button is-danger is-rounded" onclick="append(this)">Number of Internships</a>
+                  <!-- </div> -->
                 </div>
             </div>    
+            <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #209cee"></i> Skills/Knowledge</h6>  
             <div class = "level">
-                <div class = "level-left">
-                <a id = "Num-PL" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Number of PL known</a>
-                <a  id = "Machine-Learning" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded">Machine learning</a>
+                <div class = "level-left" id="skills">
+                  <a id = "Num-PL" data-origin="skills" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded" onclick="append(this)">Number of PL known</a>
+                  <a id = "Machine-Learning" data-origin="skills" draggable ="true" ondragstart = "dragStart(event);" class="button is-info  is-rounded" onclick="append(this)">Machine learning</a>
                 </div>  
             </div> 
+            <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #23d160"></i> Online Scores</h6>  
             <div class = "level">
-                <div class = "level-left">
-                  <a id = "Github-Score" draggable ="true" ondragstart = "dragStart(event);"  class="button is-success is-rounded">Github Score</a>
-                  <a id = "Online-Coding-Score" draggable ="true" ondragstart = "dragStart(event);" class="button is-success is-rounded">Online Coding Score</a>
+                <div class = "level-left" id="online-scores">
+                  <a id = "Github-Score" data-origin="online-scores" draggable ="true" ondragstart = "dragStart(event);"  class="button is-success is-rounded" onclick="append(this)">Github Score</a>
+                  <a id = "Online-Coding-Score" data-origin="online-scores"  draggable ="true" ondragstart = "dragStart(event);" class="button is-success is-rounded" onclick="append(this)">Online Coding Score</a> 
                 </div>  
             </div>
 
-            <div class = "level">
+            <!-- <div class = "level">
               <div style = "height:300px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
                 <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
                 <div class = "level-left">
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>  
 
         <div class = "column">
+          <div class = "level">
+               <div ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
+                 <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
+                 <div class = "level-left">
+                 </div>
+               </div>
+          </div>
+
+
+
         <form ref='uploadForm' 
         id='uploadForm' 
         action='/api/student/add  '
         method='post' 
         encType="multipart/form-data">
-
+        <h5 class = "subtitle is-5" id="upload-text">Give us an understanding of the hiring decisions you have made</h5>
           <div id = "upload-container" class = "level">
             <div class = "level-item">
               <div class="field">
                   <div class="file is-large is-boxed has-name">
                     <label class="file-label">
-                    
                       <input accept=".csv,.json" class="file-input" type="file" id = "Training" name="Training"/>
                       <span class="file-cta">
                         <span class="file-icon">
@@ -92,20 +119,15 @@
                           Upload a .csv file
                         </span>
                       </span>
-                      <span class="file-name">
+                      <!-- <span class="file-name">
                         Current-Interns
-                      </span>
+                      </span> -->
                     </label>
                   </div>
              </div>  
             </div>
           </div>
-          <div class = "level">
-              <div class = "level-item">
-            <div class = "uploads" id = "Training-upload"></div>  
-              </div>
-              </div>
-            
+          <h5 class = "subtitle is-5" id="upload-text">Submit your applicants for screening</h5>
           <div class = "level">
             <div class = "level-item">  
             <div class="field">
@@ -120,19 +142,13 @@
                        Upload a .csv file
                     </span>
                   </span>
-                  <span class="file-name">
+                  <!-- <span class="file-name">
                     Candidates-List
-                  </span>
+                  </span> -->
                 </label>
               </div>
               </div>  
           </div>
-          </div>
-
-          <div class = "level">
-            <div class = "level-item">  
-          <div class = "uploads" id = "Test-upload"></div>
-          </div>          
         </div>
         
         <div class = "level">
