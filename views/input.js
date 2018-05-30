@@ -2,19 +2,27 @@ const arr = [];
 
 $(document).ready(function() {    
 
+    let compName = localStorage.getItem('compName');
+    // console.log(compName);
+    $( "#compName" ).text(compName);
+
+    let groupName = localStorage.getItem('groupName');
+    $( "#group-name" ).text(groupName);
     $( "#Training" ).change( () => {
-        upload("Training");
-   
+        const fURL  = upload("Training");
+        console.log(fURL);
     });
     $( "#Test" ).change( () => {
-        upload("Test");
-     
+        const fURL  =  upload("Test");
+        console.log(fURL);
     });
-    
+
     $("#inSub").click( () => {
+        console.log("Click works!");
         console.log(arr);
-       uploadAttributes(arr);
+        uploadAttributes(arr);
     });
+
     
 });
 
@@ -32,10 +40,11 @@ function upload(id){
                 if ('name' in file) {
                     txt += file.name + "<br>";
                 }
-               
+                 fileURL  = URL.createObjectURL(file);
         }
     } 
     document.getElementById (id+"-upload").innerHTML = txt;     
+    return fileURL;
 }
 
 function dragStart(ev) {
@@ -47,11 +56,42 @@ function dragStart(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
    
-function  dragOver(ev) {
+function dragOver(ev) {
     console.log("dragOver");
     ev.preventDefault();
 }
 
+function append(e) {
+    console.log(e);
+    let attr = e.textContent;
+    // console.log(e);
+    // id of target div to append to is chosen
+    let targetDiv = document.getElementById("chosen");
+    // let deleteButton = document.getElementById("removeAttr");
+    // console.log(targetDiv);
+    arr.push(attr);
+    // e.appendChild(deleteButton);
+    // change onclick function to removeAttr
+    e.setAttribute('onclick', 'removeAttr(this)');
+    targetDiv.appendChild(e);
+    // targetDiv.appendChild(deleteButton);
+}
+
+
+function removeAttr(e) {
+    e.setAttribute('onclick', 'append(this)');
+    let indexToRemove = arr.indexOf(e.textContent);
+    console.log(indexToRemove);
+    arr.splice(indexToRemove,1);
+    // arr.remove(e.textContent);
+    let targetDiv = document.getElementById("chosen");
+    targetDiv.removeChild(e);
+    console.log(e.dataset.origin);
+    let originDiv = document.getElementById(e.dataset.origin);
+    originDiv.appendChild(e)
+    // Append to original position?
+    // reset its onclick function to append
+};
 
 function drop(ev) {
     console.log("Drop");

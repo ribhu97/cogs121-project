@@ -13,26 +13,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <script src="https://d3js.org/d3.v5.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
     <script type="text/javascript" src="output.js"></script>
     </head>
   <body>
       <section class="section">
           <!-- <div class="container"> -->
             <div class="container">
-            <h1 class="title" id="page-title">
-              Tal
-            </h1>
+            <h1 class="title is-1" id="page-title">Tal</h1>
             <!-- <div id="user-info"> -->
-                <p id="compName">Company Name</p>
-                <img src="avatar.png" id="avatar">
+                <h5 class="title is-5" id="compName"></h5>
+                <div id="avatar-cont">
+                  <img src="avatar.jpg" id="avatar">
+                </div>
             <!--  </div> -->
           </div>
         <!-- </div>           -->
-        </section>
+      </section>
+      <div class="container" style="padding-bottom: 10px; text-align: center">
+            <!-- <h3 class="subtitle is-3" id="group-name"></h3>  -->
+            <h3 class="title is-3" id="group-name"></h3>     
+      </div>
     <div class="container">
-      <!-- <h1 class="title is-1">Tal</h1> -->
       <hr>
+            <!-- Chart -->
+            <div class="container" id="chart-container">
+                <div id="chart"></div>
+                <div id="internship-chart"></div>
+            </div>
             <!-- Beginning of cards -->
             <div class="container">
               <div class="level">

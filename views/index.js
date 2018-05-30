@@ -10,6 +10,7 @@ $( document ).ready(function() {
         $("#register-btn").css('background-color','white');
         $("#register-btn").css('color','black');
         $( "#login-btn" ).css('color','white');
+        $("#submit-btn").text('Login');
         count = 0;
         console.log(count);
       });
@@ -23,7 +24,7 @@ $( document ).ready(function() {
         $( "#register-btn" ).css('color','white');
         $("#login-btn").css('background-color','white');
         $("#login-btn").css('color','black');
-
+        $("#submit-btn").text('Register');
     });
 
     $( "#submit-btn" ).click(function() {
@@ -40,11 +41,14 @@ $( document ).ready(function() {
                 return false;
             }
 
-            console.log(recName);
-            console.log(recEmail);
-            console.log(recPwd);
-            console.log(recComp);
+            // console.log(recName);
+            // console.log(recEmail);
+            // console.log(recPwd);
+            // console.log(recComp);
 
+            // Store company name and user name in local storage
+            localStorage.setItem('compName', recComp);
+            localStorage.setItem('name', recName);
 
             // Ajax call goes here
             $.ajax({
@@ -62,7 +66,7 @@ $( document ).ready(function() {
             });
 
 
-            window.location.href='input.html';
+            window.location.href='profile.html';
         }
         else {
             console.log("Logining in previous user!");
