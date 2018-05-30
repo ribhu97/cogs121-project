@@ -1,12 +1,12 @@
 # Milestone 6
 
-![login](https://github.com/Nikhil/cogs121-project/blob/master/images/milestone6-UI/login-page.png)
+![login](https://github.com/ribhu97/cogs121-project/tree/Nikhil/images/milestone6-UI/login-page.png)
 
-![profile](https://github.com/Nikhil/cogs121-project/blob/master/images/milestone6-UI/profile-page.png)
+![profile](https://github.com/ribhu97/cogs121-project/tree/Nikhil/images/milestone6-UI/profile-page.png)
 
-![input](https://github.com/Nikhil/cogs121-project/blob/master/images/milestone6-UI/input-page.png)
+![input](https://github.com/ribhu97/cogs121-project/tree/Nikhil/images/milestone6-UI/input-page.png)
 
-![data visualization](https://github.com/Nikhil/cogs121-project/blob/master/images/milestone6-UI/data-visualization.png)
+![data visualization](https://github.com/ribhu97/cogs121-project/tree/Nikhil/images/milestone6-UI/data-visualization.png)
 
 ## UI Updates
 
