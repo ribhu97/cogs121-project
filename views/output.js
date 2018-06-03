@@ -251,7 +251,8 @@ $(document).ready(function(){
 		const lname1 = result1['lname'];
 		const u1 = result1["univ"];
 		const g1 = result1["gpa"];
-		return [fname1,lname1,u1,g1]
+		let t = g1.toFixed(2);
+		return [fname1,lname1,u1,t]
 	}
 
 	 function createCard (f,l,u,g) {

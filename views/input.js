@@ -38,7 +38,7 @@ function upload(id){
  
  }
  } 
- document.getElementById (id+"-upload").innerHTML = txt; 
+ document.getElementById (id).innerHTML = txt; 
 }
 function dragStart(ev) {
  console.log("dragStart");
