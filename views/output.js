@@ -210,8 +210,6 @@ $(document).ready(function(){
 	});
 
 
-
-
 	$.get('/api/recruiter/view',function(data){
 			const att = data["recruiters"][1]["attr"];
 			$("#attributes").append("<strong>"+att[0]+", "+att[1]+", "+att[2]+" </strong>");
@@ -258,19 +256,3 @@ $(document).ready(function(){
 	 function createCard (f,l,u,g) {
 		$("#candidates").append("<div class = 'card'><div class = 'card-header'>"+f+" "+l+"</div><div class = 'card-content'>"+"<strong>College: </strong>"+u+ "<br>" +"<strong>GPA: </strong>"+g+"</div><div>");
 	 }
-
-
-	 	//GET
-		// $.ajax({
-    //   url: '/api/view',
-    //   contentType: 'application/json',
-    //   success: function(response) {
-		// 		var data = response.students;
-		// 		console.log(data);
-		// 		// Loop and append
-		// 		$('#result-1').html(data.fname);
-  	// 		$('#result-2').html(data.lname);
-  	// 		$('#result-3').html(data.email);
-    //   }
-		// });
-	
