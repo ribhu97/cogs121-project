@@ -216,12 +216,18 @@ button.is-success {
     height: 50px;
 }
 
-.scew {
+.skew {
     background-color: #3884ff;
     width: 100%;
-    height: 400px;
+    height: 500px;
     transform: skewY(10deg);
-    /* overflow: hidden; */
+}
+
+.small-skew {
+    background-color: #00cc66;
+    width: 100%;
+    height: 200px;
+    transform: skewY(-10deg);
 }
 
 #login-body {
