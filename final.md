@@ -1,12 +1,11 @@
 # Final Project Milestone
 
 ### Group Members + Contributions
-Nikhil Bose
-    - Developed and contributed to the UI + Design, the recommender, JS to transfer information and backend/database, video
-Ribhu Lahiri
-    - Developed the ML algorithm for the candidate recommender, built the REST API and designed the data schema of the database.
-Alvin Vanegas
-    - Developed the UI and primarily wrote HTML and Javascript code to link the web pages together
+Nikhil Bose: Developed and contributed to the UI + Design, the recommender, JS to transfer information and backend/database, video
+
+Ribhu Lahiri: Developed the ML algorithm for the candidate recommender, built the REST API and designed the data schema of the database
+
+Alvin Vanegas: Developed the UI and primarily wrote HTML and Javascript code to link the web pages together
 
 ### Source Code Files
 - index.html: landing page of our webpage, contains front end code of our login page.
