@@ -2,10 +2,10 @@
 $(document).ready(function(){
 	
 	// Sets header 
-	let compName = localStorage.getItem('compName');
+  let compName = localStorage.getItem('compName');
   $( "#compName" ).text(compName);
   let groupName = localStorage.getItem('groupName');
-	$( "#group-name" ).text(groupName);
+   $( "#group-name" ).text(groupName);
 	
 	// function that takes in CSV file and converts to JSON format
 	$.getJSON("test.json", function(data) {
@@ -119,7 +119,7 @@ $(document).ready(function(){
 					},
 					title: {
 						show: false,
-						text: 'My Title',
+						text: 'GPA Distribution',
 						position: 'top-center'   // top-left, top-center and top-right
 
 					}
@@ -201,7 +201,7 @@ $(document).ready(function(){
 				},
 				title: {
 					show: false,
-					text: 'My Title',
+					text: 'Experience Distribution',
 					position: 'top-center'   // top-left, top-center and top-right
 
 				}
@@ -254,5 +254,5 @@ $(document).ready(function(){
 	}
 
 	 function createCard (f,l,u,g) {
-		$("#candidates").append("<div class = 'card'><div class = 'card-header'>"+f+" "+l+"</div><div class = 'card-content'>"+"<strong>College: </strong>"+u+ "<br>" +"<strong>GPA: </strong>"+g+"</div><div>");
+		$("#candidates").append("<div class = 'card'><div class = 'card-header'><p class= 'card-header-title' >"+f+" "+l+"</p></div><div class = 'card-content'>"+"<strong>College: </strong>"+u+ "<br>" +"<strong>GPA: </strong>"+g+"</div><div>");
 	 }
