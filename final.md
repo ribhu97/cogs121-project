@@ -20,5 +20,7 @@ Alvin Vanegas
 - model (in server/model/): contains the data schema for the required data models for student, recruiters and groups.
 - controllers (in server/controller/: contains the queries to serve data from the database through a REST API
 - perceptron: a simple 2-layer perceptron, with an input layer of 10 units. Trained on given company data for binary classification of potential hires
+- test_data.csv - test data file
+- train_data.csv - train data file
 ### Demo Video
 https://youtu.be/S3X9qhw-OTY
