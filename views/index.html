@@ -1,4 +1,5 @@
 <!-- HTML for our landing/login page, uses the css framework Bulma, font awesome, and google fonts -->
+<!-- Handles the login, and uses Bulma Input forms to take in user input-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,17 +9,14 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- CSS Style -->
     <link href="main.css" rel="stylesheet">
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:700|Open+Sans" rel="stylesheet">
-    <!-- Javascript code : TO BE MOVED TO SEPARATE FILE -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
+    <!-- Javascript code -->
     <script type='text/javascript' src = "index.js"></script>
     </head>
   <body id="login-main">
@@ -28,11 +26,7 @@
             <div class="container" id="login-forms">
               <h3 class="title is-3 is-spaced">Find the right people.</h3>  
               <h3 class="subtitle">Tal is a ML based recruiting tool that lets you choose the perfect candidates.</h3>
-              <div class="card has-text-centered is-wide">
-                <!-- <header class="card-header">
-                  <a class="button" id="login-btn">Login</a>
-                  <a class="button" id="register-btn">Register</a>
-                </header> -->
+              <div class="card has-text-centered is-wide"> 
                 <div class="card-content">
                   <!-- Name Input -->
                   <div class="field" id="name-input">
@@ -86,7 +80,6 @@
                 </div>
               </div>
               <div class="container" id="btn-container">
-                  <!-- <a class="button" id="login-btn">Returning User</a> -->
                   <a class="button" id="register-btn">Create New Account</a>
               </div>
             </div>
@@ -94,8 +87,6 @@
       </div> 
       
       <div class="skew"></div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
     </body>
 </html>

@@ -1,3 +1,5 @@
+<!-- HTML Code for Input Page, creates UI components for Attributes + Drag/Drop Functions -->
+<!-- UI components for FileUpload including CTA using Bulma -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,10 +15,12 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <!-- Font -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type='text/javascript' src = "input.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   <!-- JS file -->
+    <script type='text/javascript' src = "input.js"></script>
+  
     </head>
   <body>
       <section class="section">
@@ -36,7 +40,7 @@
             <!-- <h3 class="subtitle is-3" id="group-name"></h3>  -->
             <h3 class="title is-3" id="group-name"></h3>     
         </div>
-        
+    <!-- Container for all the attributes stored as buttons -->
     <div class="container">
       <div class = "columns">        
         <div class = "column is-two-fifths" id="attr-col">
@@ -44,26 +48,16 @@
             <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #00d1b2"></i> School</h6>  
             <div class = "level">
               <div class = "level-left" id="school">
-                <!-- <div class="level-item"> -->
                     <a id = "University" data-origin="school" draggable ="true" ondragstart = "dragStart(event);" class="button is-primary is-rounded" onclick="append(this)">University</a>
-                <!-- </div> -->
-                <!-- <div class="level-item"> -->
                     <a id = "Major" data-origin="school" draggable ="true" ondragstart = "dragStart(event);"  class="button is-primary is-rounded" onclick="append(this)">Major</a>
-                <!-- </div> -->
-                <!-- <div class="level-item"> -->
                     <a id = "GPA" data-origin="school" draggable ="true"  ondragstart = "dragStart(event);" class="button is-primary is-rounded" onclick="append(this)">GPA</a>
-                <!-- </div> -->
               </div>
             </div>
             <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #ff6699"></i> Internships</h6>  
             <div class = "level">
                 <div class = "level-left" id="internships">
-                  <!-- <div class="level-item"> -->
                       <a id = "Internship-Quality" data-origin="internships" draggable ="true" ondragstart = "dragStart(event);"  class="button is-danger is-rounded" onclick="append(this)">Quality of Internships</a>
-                  <!-- </div> -->
-                  <!-- <div class="level-item"> -->
                       <a id = "Num-Internship" data-origin="internships" draggable ="true" ondragstart = "dragStart(event);" class="button is-danger is-rounded" onclick="append(this)">Number of Internships</a>
-                  <!-- </div> -->
                 </div>
             </div>    
             <h6 class="subtitle is-6"><i class="fa fa-circle" aria-hidden="true" style="color: #cc66ff"></i> Skills/Knowledge</h6>  
@@ -80,16 +74,9 @@
                   <a id = "Online-Coding-Score" data-origin="online-scores"  draggable ="true" ondragstart = "dragStart(event);" class="button is-success is-rounded" onclick="append(this)">Online Coding Score</a> 
                 </div>  
             </div>
-
-            <!-- <div class = "level">
-              <div style = "height:300px;"ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
-                <h5 class = "subtitle is-5">Place your chosen attributes here:</h5>
-                <div class = "level-left">
-                </div>
-              </div>
-            </div> -->
           </div>  
 
+        <!-- Where the selected attributes are appended -->
         <div class = "column">
           <div class = "level">
                <div ondrop="drop(event);" ondragover="dragOver(event);" id = "chosen">
@@ -99,9 +86,8 @@
                </div>
           </div>
 
-
-
-        <form ref='uploadForm' 
+        <!-- Training File Upload -->
+        <form ref='uploadForm'
         id='uploadForm' 
         action='/api/student/add  '
         method='post' 
@@ -121,9 +107,6 @@
                           Upload a .csv file
                         </span>
                       </span>
-                      <!-- <span class="file-name">
-                        Current-Interns
-                      </span> -->
                     </label>
                   </div>
              </div>  
@@ -131,6 +114,8 @@
           </div>
           <div id = "Training-upload"></div>
 
+
+          <!-- Test File Upload -->
           <h5 class = "subtitle is-5" id="upload-text">Submit your applicants for screening</h5>
           <div class = "level">
             <div class = "level-item">  
@@ -146,16 +131,13 @@
                        Upload a .csv file
                     </span>
                   </span>
-                  <!-- <span class="file-name">
-                    Candidates-List
-                  </span> -->
                 </label>
               </div>
               </div>  
           </div>
         </div>
         <div id = "Test-upload"></div>
-        
+        <!-- Submit button -->
         <div class = "level">
           <div class = "level-item">
             <input class="button is-primary is-rounded" type = "submit" id = "inSub" value='Submit'/>
@@ -163,11 +145,8 @@
          </div>
        
         </form>
-     
       </div>
       </div>
-      
     </div>
-
   </body>
 </html>

@@ -6,8 +6,8 @@
 
 const arr = [];
 $(document).ready(function() { 
+// Get UI data
  let compName = localStorage.getItem('compName');
- // console.log(compName);
  $( "#compName" ).text(compName);
  let groupName = localStorage.getItem('groupName');
  $( "#group-name" ).text(groupName);
@@ -27,6 +27,7 @@ $(document).ready(function() {
 
  
 });
+//creates upload signifier for UI
 function upload(id){
  const x = document.getElementById(id);
  let txt = "";
@@ -70,38 +71,39 @@ function append(e) {
  // targetDiv.appendChild(deleteButton);
 }
 function removeAttr(e) {
- e.setAttribute('onclick', 'append(this)');
- let indexToRemove = arr.indexOf(e.textContent);
- console.log(indexToRemove);
- arr.splice(indexToRemove,1);
- // arr.remove(e.textContent);
- let targetDiv = document.getElementById("chosen");
- targetDiv.removeChild(e);
- console.log(e.dataset.origin);
- let originDiv = document.getElementById(e.dataset.origin);
- originDiv.appendChild(e)
- // Append to original position?
- // reset its onclick function to append
+    e.setAttribute('onclick', 'append(this)');
+    let indexToRemove = arr.indexOf(e.textContent);
+    console.log(indexToRemove);
+    arr.splice(indexToRemove,1);
+    // arr.remove(e.textContent);
+    let targetDiv = document.getElementById("chosen");
+    targetDiv.removeChild(e);
+    console.log(e.dataset.origin);
+    let originDiv = document.getElementById(e.dataset.origin);
+    originDiv.appendChild(e)
+    // Append to original position?
+    // reset its onclick function to append
 };
 function drop(ev) {
- console.log("Drop");
- ev.preventDefault();
- // Get the data, which is the id of the drop target
- var data = ev.dataTransfer.getData("text");
- document.getElementById(data).style.margin = "10px;";
- arr.push(data);
- ev.target.appendChild(document.getElementById(data));
- // Clear the drag data cache (for all formats/types)
- ev.dataTransfer.clearData();
+    console.log("Drop");
+    ev.preventDefault();
+    // Get the data, which is the id of the drop target
+    var data = ev.dataTransfer.getData("text");
+    document.getElementById(data).style.margin = "10px;";
+    arr.push(data);
+    ev.target.appendChild(document.getElementById(data));
+    // Clear the drag data cache (for all formats/types)
+    ev.dataTransfer.clearData();
 }
+// post attributes to database
 function uploadAttributes(arr) {
  $.ajax({
- url: '/api/recruiter/edit',
- type: 'PUT', 
- data: { attr : arr },
- datatype: 'json',
- success : (data) => {
- console.log("Attribute Post is a sucess")
- }
- });
+    url: '/api/recruiter/edit',
+    type: 'PUT', 
+    data: { attr : arr },
+    datatype: 'json',
+    success : (data) => {
+    console.log("Attribute Post is a sucess")
+    }
+});
 }

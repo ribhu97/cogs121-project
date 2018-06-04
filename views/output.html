@@ -1,7 +1,7 @@
+<!-- Frontend code that contains the datavisualizations + results of the model -->
 <!doctype html>
 <html lang="en">
   <head>
-
     <title>TAL, the talent finder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,6 +9,8 @@
     <!-- CSS Style -->
     <link href="main.css" rel="stylesheet">
     <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
@@ -16,24 +18,27 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
     <script type="text/javascript" src="output.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"> </script>
+    
+    <!-- start of ML script -->
     <script>
 
-  function getData(result1) {
-    const gs = result1[0];
-    const resume = result1[1];
-    const g1 = result1[3];
-		const fname1 = result1[4];
-		const lname1 = result1[5];
-		let t = g1.toFixed(2);
-		return [fname1,lname1,t,resume,gs]
-	  }
+    // parses array entry to format data
+    function getData(result1) {
+      const gs = result1[0];
+      const resume = result1[1];
+      const g1 = result1[3];
+      const fname1 = result1[4];
+      const lname1 = result1[5];
+      let t = g1.toFixed(2);
+      return [fname1,lname1,t,resume,gs]
+      }
 
-  function createCard (f,l,r,g,gs) {
-  $("#candidates").append("<div class = 'card'><div class = 'card-header'><p class= 'card-header-title' >"+f+" "+l+"</p></div><div class = 'card-content'>"+"<strong>Resume Score: </strong>"+r+ "<br>"+"<strong>Github Score: </strong>"+gs+ "<br>"  +"<strong>GPA: </strong>"+g+"</div><div>");
-  }
+      // creates card based on formatted data
+      function createCard (f,l,r,g,gs) {
+        $("#candidates").append("<div class = 'card'><div class = 'card-header'><p class= 'card-header-title' >"+f+" "+l+"</p></div><div class = 'card-content'>"+"<strong>GPA: </strong>"+r+ "<br>"+"<strong>Resume Score: </strong>"+gs+ "<br>"  +"<strong>Github Score: </strong>"+g+"</div><div>");
+      }
 
 const data = [
   [5.1, 3.5, 1.4, 0.2, 0], [4.9, 3.0, 1.4, 0.2, 0], [4.7, 3.2, 1.3, 0.2, 0],
@@ -95,6 +100,7 @@ let compare = [];
 let prlist = [];
 let candidates = [];
 
+//gets student data from database
 $.ajax({
             url: "/api/student/view",
             type: 'GET',
@@ -114,21 +120,27 @@ $.ajax({
                 features.push(train[i].slice(0,4));
                 targets.push(data[i][4]);
               }
-              const xDims = 4;
+              
+              const xDims = 4;//Number of features being evaluated
+              //creating tensors for training data features and targets
               const xs = tf.tensor2d(train, [features.length, xDims]);
               const ys = tf.oneHot(tf.tensor1d(targets).toInt(), 2);
+              //creating new model
               const model = tf.sequential();
+                //10-unit input layer
                 model.add(tf.layers.dense(
                     {units: 10, activation: 'sigmoid', inputShape: [4]}));
+                //2-unit output layer to output probabilities of being hired or not
                 model.add(tf.layers.dense({units: 2, activation: 'softmax'}));
 
+                //Adding an optimizer
                 const optimizer = tf.train.adam(0.001);
                 model.compile({
                   optimizer: optimizer,
                   loss: 'categoricalCrossentropy',
                   metrics: ['accuracy'],
               });
-              
+              //Parsing student data to get features
               for(i=150;i<200;i++){
                 tempTest.push(res.students[i].github_score);
                 tempTest.push(res.students[i].resume_score);
@@ -139,16 +151,19 @@ $.ajax({
                 test.push(tempTest);
                 tempTest = [];
               }
+              //probabilities of top three candidates being potential hires
               let maxOne=0,maxTwo=0,maxThree=0;
               model.fit(xs, ys).then(() => { 
                 for(i=0;i<50;i++){
                   const input = tf.tensor2d(test[i].slice(0,4), [1, 4]);
+                  //predict on given test data
                   const predictOut = model.predict(input);
+                  //get probabilities of being hired or not
                   const logits = Array.from(predictOut.dataSync());
                   compare.push([logits[1],i]);
                   prlist.push(logits[1]);
                 }
-
+                //Parsing list of predictions to find top 3
                 const maxOne = Math.max(...prlist);
                 let indice = prlist.indexOf(Math.max(...prlist));
                 if (indice > -1) {
@@ -162,24 +177,21 @@ $.ajax({
                 const maxThree = Math.max(...prlist);
                 for(i=0;i<50;i++){
                   if(compare[i][0]==maxOne){
-                    console.log(test[i]);
                     candidates.push(test[i]);
                     
                   }
                   if(compare[i][0]==maxTwo){
-                    console.log(test[i]);
                     candidates.push(test[i]);
 
                   }
                   if(compare[i][0]==maxThree){
-                    console.log(test[i]);
                     candidates.push(test[i]);
 
                   }
                   
 
                 }
-                
+                //Parsing the data into cards for displaying
                 let c = getData(candidates[0]);
                 let c2 = getData(candidates[1]);
                 let c3 = getData(candidates[2]);

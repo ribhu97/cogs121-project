@@ -13,7 +13,8 @@ $(document).ready(function(){
    $( "#group-name" ).text(groupName);
 	
 	// function that takes in CSV file and converts to JSON format
-	$.getJSON("test.json", function(data) {
+	$.get('api/student/view' ,function(data) {
+		data = data["students"];
 		// Get the counts of the GPAs 
 		gpa_counts = [{
 				"GPA_range": "3.0-3.1",
@@ -99,7 +100,7 @@ $(document).ready(function(){
 				}
 			}
 		}
-		 
+		//create visualization for GPA distribtuion
 		 var convertedData = [];
 		 gpa_counts.forEach(function(item){
 				 convertedData.push([item.GPA_range, item.count]);
@@ -186,7 +187,7 @@ $(document).ready(function(){
 		 internship_counts.forEach(function(item){
 				 dataSet.push([item.Num_internships, item.count]);
 		 });
-
+		 // Create visualization for experience distribution
 		var chart = c3.generate({
 			bindto: '#internship-chart',
 			data: {
@@ -213,12 +214,4 @@ $(document).ready(function(){
  		});
 
 	});
-
-	/*
-
-	$.get('/api/recruiter/view',function(data){
-			const att = data["recruiters"][1]["attr"];
-			$("#attributes").append("<strong>"+att[0]+", "+att[1]+", "+att[2]+" </strong>");
-		});
-	*/
 });

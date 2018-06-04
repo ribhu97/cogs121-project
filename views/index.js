@@ -1,9 +1,13 @@
+/*
+    Handles New User Login, pushes it the credentials to the database.
+    Puts info into localStorage for later use for UI components
+*/
+
 $( document ).ready(function() {
     let count = 0;
 
     // 0 for login, 1 for register
     $( "#login-btn" ).click(function() {
-        // console.log("Login button pressed");
         $( "#name-input" ).hide();
         $( "#comp-input" ).hide();
         $( "#login-btn" ).css('background-color','#3884ff');
@@ -12,12 +16,9 @@ $( document ).ready(function() {
         $( "#login-btn" ).css('color','white');
         $("#submit-btn").text('Login');
         count = 0;
-        console.log(count);
       });
     $( "#register-btn" ).click(function() {
         count = 1;
-        console.log(count);
-        // console.log("Register button pressed");
         $( "#name-input" ).show();
         $( "#comp-input" ).show();
         $( "#register-btn" ).css('background-color','#3884ff');
@@ -27,32 +28,25 @@ $( document ).ready(function() {
         $("#submit-btn").text('Register');
         $("#register-btn").hide();
     });
-
+    // adds a new user to db
     $( "#submit-btn" ).click(function() {
-        console.log("Submit button clicked");
         if (count == 1) {
-            console.log("New user!");
             let recName = $( "#name" ).val();
             let recEmail = $( "#email" ).val();
             let recPwd = $( "#password" ).val();
             let recComp = $( "#company" ).val();
-
+            // makes sure the form is filled
             if (recName==""|| recEmail==""|| recPwd=="" || recComp=="" ){
                 alert("Please Fill All Required Field");
                 return false;
             }
-
-            // console.log(recName);
-            // console.log(recEmail);
-            // console.log(recPwd);
-            // console.log(recComp);
 
             // Store company name and user name in local storage
             localStorage.setItem('compName', recComp);
             localStorage.setItem('name', recName);
             localStorage.setItem('email', recEmail);
 
-            // Ajax call goes here
+            // Posts credentials to databse
             $.ajax({
                 method:'POST',
                 url: '/api/recruiter/add',
@@ -63,21 +57,15 @@ $( document ).ready(function() {
                     company: recComp
                 },
                 success: () => {
-                    console.log('data pushed');
                     window.location.href='profile.html';
                 }
             });
         }
         else {
-            console.log("Logining in previous user!");
+            // previous user credentials
             let email = $( "#email" ).val();
             let password = $( "#password" ).val();
-            console.log(email);
-            console.log(password);
         }
     });
-
-   
-
 
 });
