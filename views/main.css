@@ -1,7 +1,6 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 .title{
     font-family: 'Rubik', sans-serif;
@@ -62,7 +61,6 @@ p {
 
 #my-models {
     text-align: center;
-    padding-bottom:108px;
 }
 
 #output-divider{   
@@ -224,12 +222,18 @@ button.is-success {
     height: 50px;
 }
 
-.scew {
-    background-color: #1aedcd;
+.skew {
+    background-color: #3884ff;
     width: 100%;
-    height: 400px;
+    height: 500px;
     transform: skewY(10deg);
-    /* overflow: hidden; */
+}
+
+.small-skew {
+    background-color: #00cc66;
+    width: 100%;
+    height: 200px;
+    transform: skewY(-10deg);
 }
 
 #login-body {
@@ -244,4 +248,12 @@ button.is-success {
     padding-bottom: 0;
     margin-top: 0;
     padding-top: 0;
+}
+
+#login-main {
+    overflow: hidden;
+}
+
+#profile-body {
+    overflow: hidden;
 }
