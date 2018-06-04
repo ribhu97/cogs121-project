@@ -25,6 +25,7 @@ $( document ).ready(function() {
         $("#login-btn").css('background-color','white');
         $("#login-btn").css('color','black');
         $("#submit-btn").text('Register');
+        $("#register-btn").hide();
     });
 
     $( "#submit-btn" ).click(function() {

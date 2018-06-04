@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="profile.js"></script>
   </head>
-  <body>
+  <body id="profile-body">
       <section class="section">
           <!-- <div class="container"> -->
             <div class="container">
@@ -27,8 +28,8 @@
       <section class="section" id="my-models">
         <div class="container">
           <h3 class="title is-3" id="welcome">Welcome </h3>
-          <div class="level">
-            <h4 class="title is-4" id="models-section">My Models</h4>
+          <div class="level" style="text-align: center">
+            <h4 class="title is-4" id="models-section" >My Models</h4>
           </div>
           <div class="level">
               <div class="level-item">
@@ -38,7 +39,7 @@
           <div class="level" style="text-align: center">
               <a class="button" style="margin:auto" onclick="toggleModal()">
                   <!-- <div id="add-model"> -->
-                      Add New Group
+                      Add New Model
                   <!-- </div> -->
                   <br />
                   <i class="fas fa-plus"></i>
@@ -51,16 +52,18 @@
                 <div class="card">
                   <!-- <div class="card-header-title">Name Group</div> -->
                   <div class="card-content">
-                    <h5 class="title is-5">Enter new group name</h5>
+                    <h5 class="title is-5">Enter new model name</h5>
                     <div class="control">
                           <input class="input" type="text" placeholder="ex. UCSD Class of 2018" id="groupName">
                       </div>
+                      <a class="button" onclick="submitGroup()">Submit</a>
                   </div>
-                  <a class="button" onclick="submitGroup()">Submit</a>
                 </div>
               </div>
           </div>
         </div>
   </section>
+  <div class="small-skew"></div>
+  <div class="skew"></div>
   </body>
 </html>
