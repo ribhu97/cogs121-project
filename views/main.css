@@ -74,6 +74,7 @@ p {
     border-radius:10px;
     font-family: 'Rubik', sans-serif;
     margin:5px;
+    width: 100%;
 }
 
 .card-header {

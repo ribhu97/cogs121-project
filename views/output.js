@@ -209,50 +209,11 @@ $(document).ready(function(){
 
 	});
 
+	/*
 
 	$.get('/api/recruiter/view',function(data){
 			const att = data["recruiters"][1]["attr"];
 			$("#attributes").append("<strong>"+att[0]+", "+att[1]+", "+att[2]+" </strong>");
 		});
-
-	$.get('/api/student/view',function(data){
-			console.log('The Student in output works');
-			let students = data['students'];
-			const result1 = data['students'][0];
-			const result2 = data['students'][4];
-			const result3 = data['students'][444];
-			a = getData(result1);
-			b = getData(result2);
-			c = getData(result3);
-			createCard(a[0],a[1],a[2],a[3]);    
-			createCard(b[0],b[1],b[2],b[3]);
-			createCard(c[0],c[1],c[2],c[3]);
-			/*
-			for(let i = 0; i < 1000; i++ ){
-				if(data['students'][i]["num_internships"] > 0 && data["students"][i]["github_score"] > 50){
-							chosen.push(data["students"][i]);
-				}
-			*/
-			/*
-			for(let i = 0; i < chosen.length;i++){
-					d = getData(chosen(i));
-					createCard(e);
-			}
-			*/
-
-		});
-
-	});
-
-	 function getData(result1) {
-		const fname1 = result1['fname'];
-		const lname1 = result1['lname'];
-		const u1 = result1["univ"];
-		const g1 = result1["gpa"];
-		let t = g1.toFixed(2);
-		return [fname1,lname1,u1,t]
-	}
-
-	 function createCard (f,l,u,g) {
-		$("#candidates").append("<div class = 'card'><div class = 'card-header'><p class= 'card-header-title' >"+f+" "+l+"</p></div><div class = 'card-content'>"+"<strong>College: </strong>"+u+ "<br>" +"<strong>GPA: </strong>"+g+"</div><div>");
-	 }
+	*/
+});
