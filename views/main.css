@@ -3,6 +3,49 @@ html, body {
     height: 100%;
     overflow: hidden;
 }
+.title{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+
+.subtitle{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+}
+
+
+#Internship-Quality{
+    background-color:#ff6699;
+}
+
+#Num-Internship{
+    background-color:#ff6699;
+}
+
+#Github-Score{
+    background-color:#00cc66;
+
+}
+#Online-Coding-Score{
+    background-color:#00cc66;
+}
+
+#Num-PL{
+   background-color: #cc66ff;
+}
+#Machine-Learning{
+    background-color: #cc66ff;
+
+}
+.section{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
 
 #user-info {
     display: block;
@@ -10,6 +53,7 @@ html, body {
 }
 #page-title {
     display: inline-block;
+    padding-left:20px;
 }
 
 #welcome-text {
@@ -63,6 +107,8 @@ html, body {
 
 #compName {
     float: right;
+    padding-left:10px;
+    padding-top:15px;
 }
 #login-forms {
     text-align: center;
@@ -108,11 +154,12 @@ button.is-success {
 }
 
 .column {
-    border-top: 2px solid #dddddd;
+    border-top: 3px solid #dddddd;
 }
 
 #attr-col {
-    border-right: 2px solid #dddddd;
+    border-right: 3px solid;
+    border-color: #dddddd;
 }
 
 #chosen {
@@ -134,7 +181,7 @@ button.is-success {
 }
 
 #upload-text {
-    margin-bottom: 0px;
+    margin-bottom: 2px;
 }
 
 #upload-container {
@@ -179,4 +226,14 @@ button.is-success {
 
 #login-body {
     padding-bottom: 45px;
+}
+#group-name{
+    margin-bottom: 5px;
+}
+
+#Training-upload{
+    margin-bottom: 3px;
+    padding-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
 }
