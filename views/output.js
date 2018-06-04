@@ -1,3 +1,8 @@
+/**
+ * File contains the GET ajax requests from the database to get the necessary data for the data
+ * visualization and the model output. Also contains the S3 (visualization library) code to render the 
+ * charts. Also contains the functions to dynamically create the HTML elements to display the models results
+ */
 
 $(document).ready(function(){
 	
