@@ -3,7 +3,7 @@ $(document).ready(function(){
     let name = localStorage.getItem('name');
     console.log(compName);
     console.log(name);
-    $( "#compName" ).text(compName);
+    $("#compName").text(compName);
     let welcomeText = document.getElementById('welcome');
     welcomeText.textContent += name;
 });
@@ -17,6 +17,17 @@ function toggleModal(){
 
 function submitGroup(){
     let groupName = document.getElementById('groupName').value;
-    localStorage.setItem("groupName", groupName);
+    //localStorage.setItem("groupName", groupName);
+    console.log("Submitted")
+    $.ajax({
+        method:'POST',
+        url: '/api/group/add',
+        data: {
+            name: groupName
+        },
+        success: () => {
+            console.log('data pushed');
+        }
+    });
     window.location.href='input.html';
 };

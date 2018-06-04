@@ -24,8 +24,9 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(callback) {console.log("database connected")});
 
-Student = require('./server/controllers/students');
-Recruiter = require('./server/controllers/recruiters');
+const Student = require('./server/controllers/students');
+const Recruiter = require('./server/controllers/recruiters');
+const Group = require('./server/controllers/group');
 //ROUTES
 let index = require('./routes/index');
 
@@ -33,9 +34,11 @@ app.use(fileUpload());
 const upload = multer({dest:'uploads/'});
 
 app.get('/api/student/view', Student.find);
-app.post('/api/student/add', Student.create);
 app.get('/api/recruiter/view', Recruiter.find);
+app.get('/api/group/view', Group.find);
+app.post('/api/student/add', Student.create);
 app.post('/api/recruiter/add', Recruiter.create);
+app.post('/api/group/add', Group.create);
 app.put('/api/recruiter/edit', Recruiter.edit);
 
 app.use(express.static(__dirname + '/views'));

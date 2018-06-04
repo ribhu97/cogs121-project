@@ -7,14 +7,12 @@
     const Schema = mongoose.Schema;
   
     var GroupSchema = new Schema({
-      name: {
-        type: String,
-      },
+      name: String,
       attr: [String],
-      recruiter: [{
+      recruiter: {
         type: Schema.Types.ObjectId,
         ref: 'Recruiter'
-      }],
+      },
       test: [Student],
       train: [Student]
     });
