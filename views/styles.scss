@@ -1,0 +1,22 @@
+// 1. Import the initial variables
+@import "../sass/utilities/initial-variables";
+@import "../sass/utilities/functions";
+
+// 2. Set your own initial variables
+// Update blue
+$blue: #72d0eb;
+// Add pink and its invert
+$pink: #ffb3b3;
+$purp: #cc66ff;
+// Add a serif family
+$family-sans-serif:'Rubik', sans-serif;
+// 3. Set the derived variables
+// Use the new pink as the primary color
+// Use the existing orange as the danger color
+$danger: $orange;
+$is-info:$purp;
+$button-color: $purp !default;
+
+
+// 6. Import the rest of Bulma
+@import "../bulma";

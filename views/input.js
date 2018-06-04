@@ -7,16 +7,16 @@ $(document).ready(function() {
  $( "#group-name" ).text(groupName);
  
  $( "#Training" ).change( () => {
- upload("Training");
+    upload("Training");
  });
 
  $( "#Test" ).change( () => {
- upload("Test");
+    upload("Test");
  });
  
  $("#inSub").click( () => {
- console.log(arr);
- uploadAttributes(arr);
+    console.log(arr);
+    uploadAttributes(arr);
  });
 
  
@@ -24,27 +24,22 @@ $(document).ready(function() {
 function upload(id){
  const x = document.getElementById(id);
  let txt = "";
- let fileURL = "";
  if ('files' in x) {
- if (x.files.length == 0) {
- txt = "Please upload a file";
- } 
+    if (x.files.length == 0) {
+        txt = "Please upload a file";
+    } 
  else {
- txt += "<br><strong>" + id + " Data has uploaded!</strong><br>";
- var file = x.files[0];
- if ('name' in file) {
- txt += file.name + "<br>";
- }
- 
- }
+    txt += "<br><strong>" + id + " Data has uploaded!</strong><br>";
+    var file = x.files[0];
+    if ('name' in file) {
+        txt += file.name + "<br>";
+        }
+    }
  } 
- document.getElementById (id).innerHTML = txt; 
+ document.getElementById (id+"-upload").innerHTML = txt; 
 }
 function dragStart(ev) {
  console.log("dragStart");
- // Change the source element's background color to signify drag has started
- ev.currentTarget.style.border = "dashed";
- ev.currentTarget.style.color = "grey";
  // Set the drag's format and data. Use the event target's id for the data 
  ev.dataTransfer.setData("text", ev.target.id);
 }
