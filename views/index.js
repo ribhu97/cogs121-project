@@ -50,6 +50,7 @@ $( document ).ready(function() {
             // Store company name and user name in local storage
             localStorage.setItem('compName', recComp);
             localStorage.setItem('name', recName);
+            localStorage.setItem('email', recEmail);
 
             // Ajax call goes here
             $.ajax({
