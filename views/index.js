@@ -48,8 +48,8 @@ $( document ).ready(function() {
             // console.log(recComp);
 
             // Store company name and user name in local storage
-            localStorage.setItem('compName', recComp);
-            localStorage.setItem('name', recName);
+            // localStorage.setItem('compName', recComp);
+            // localStorage.setItem('name', recName);
 
             // Ajax call goes here
             $.ajax({
@@ -63,11 +63,9 @@ $( document ).ready(function() {
                 },
                 success: () => {
                     console.log('data pushed');
+                    window.location.href='profile.html';
                 }
             });
-
-
-            window.location.href='profile.html';
         }
         else {
             console.log("Logining in previous user!");
