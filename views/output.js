@@ -115,7 +115,7 @@ $(document).ready(function(){
 								}
 					},
 					size: {
-						width: 640
+						width: 400
 					},
 					title: {
 						show: false,
@@ -197,7 +197,7 @@ $(document).ready(function(){
 							}
 				},
 				size: {
-					width: 640
+					width: 400
 				},
 				title: {
 					show: false,
