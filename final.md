@@ -4,7 +4,7 @@
 Nikhil Bose
     - Developed and contributed to the UI, the candidate recommendor and backend/database
 Ribhu Lahiri
-    - Developed the ML algorithm for the candidate recommendor and built the database schema
+    - Developed the ML algorithm for the candidate recommendor and built the REST API.
 Alvin Vanegas
     - Developed the UI and primarily wrote HTML and Javascript code to link the web pages together
 
