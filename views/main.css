@@ -65,6 +65,13 @@ p {
     padding-bottom:108px;
 }
 
+#output-divider{   
+     border-bottom: 2px solid;
+    border-bottom-color: #dddddd;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
 .card{
     border-radius:10px;
     margin:5px;
