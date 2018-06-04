@@ -1,3 +1,8 @@
+/**
+ * File contains code to display the users profile which is their past models and the naming
+ * of their new model.
+ */
+
 $(document).ready(function(){
     let compName = localStorage.getItem('compName');
     let name = localStorage.getItem('name');

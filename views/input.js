@@ -1,3 +1,9 @@
+/**
+ * File does the core functionality of the user input for their model. The drag and drop feature is 
+ * implemented here. It also contains the file-to-database functionality. Lastly this file also contains
+ * the ajax call to send all the user's input to the database.
+ */
+
 const arr = [];
 $(document).ready(function() { 
  let compName = localStorage.getItem('compName');
