@@ -34,7 +34,17 @@
       },
       
       find: function(req, res) {
-        //TODO
+        Group.find(function(err, group) {
+          if (err) {
+            return res.status(500).json({
+              err: err || err.errmessage
+            });
+          } else {
+            return res.status(200).json({
+              groups: group
+            });
+          }
+        });
       },
 
     };
