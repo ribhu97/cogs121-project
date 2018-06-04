@@ -17,7 +17,7 @@ function toggleModal(){
 
 function submitGroup(){
     let groupName = document.getElementById('groupName').value;
-    //localStorage.setItem("groupName", groupName);
+    localStorage.setItem("groupName", groupName);
     console.log("Submitted")
     $.ajax({
         method:'POST',
