@@ -64,11 +64,9 @@ $( document ).ready(function() {
                 },
                 success: () => {
                     console.log('data pushed');
+                    window.location.href='profile.html';
                 }
             });
-
-
-            window.location.href='profile.html';
         }
         else {
             console.log("Logining in previous user!");
